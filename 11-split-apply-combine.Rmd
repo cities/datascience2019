@@ -1,0 +1,41 @@
+---
+title: "Split-Apply-Combine Pattern in Data Modeling"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Split-Apply-Combine
+<img alt="Split-Apply-Combine" style="border-width:0" src="http://swcarpentry.github.io/r-novice-gapminder/fig/12-plyr-fig1.png" />
+
+A common analytical pattern is to:
+
+- split data into pieces,
+- apply some function to each piece,
+- combine the results back together again.
+
+Generally avoid using loops when you need to do Split-Apply-Combine, consider these alternatives instead:
+
+1. Entry level: `dplyr::group_by()`
+1. General approach: nesting
+1. `*aplly` functions and `plyr` package (non-tidyverse solution)
+
+# Lesson
+- [Data modeling with Split-Apply-Combine](http://cities.github.io/datascience/split-apply-combine-pattern-in-data-modeling.html)
+
+# Exercise
+1. Fit linear regression models of the daily bike counts on percipitation, min and max temperature, first for all bridges together and then for each bridge separately using the split-apply-combine pattern;
+1. Extract the results from models in the above step: 
+    1. Compare the R-squares of the bridge-specific model. The bike traffic of which bridge has the highest correlation with percipitation, min and max temperature?
+    1. Which model has the largest percipitation coefficient? Temperature coefficient?
+
+[Sample code](code/model.R)
+
+# Resources:
+1. [purrr package](https://github.com/tidyverse/purrr)
+1. [purrr tutorial](https://jennybc.github.io/purrr-tutorial/)
+1. [Software Carpentry lesson on Split-Apply-Combine](http://swcarpentry.github.io/r-novice-gapminder/12-plyr/)

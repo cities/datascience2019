@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Introduction to Data Science</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introduction to Data Science</h1>
+
+</div>
+
+
+<ul>
+<li>Course Website: <a href="https://cities.github.io/datascience2018" class="uri">https://cities.github.io/datascience2018</a></li>
+<li>GitHub repository: <a href="https://github.com/cities/datascience2018" class="uri">https://github.com/cities/datascience2018</a></li>
+</ul>
+<div id="syllabus" class="section level1">
+<h1>Syllabus</h1>
+<p>Did you ever feel you are “drinking from a hose” with the amount of data you are attempting to analyze? Have you been frustrated with the tedious steps in your data processing and analysis process and thinking there gotta be a better way to do things? Are you curious what the buzz of data science is about? If any of your answers is yes, then this course is for you. Although computing is now an integral part of every aspect of science and engineering, transportation research included, most students of science, engineering, and planning are never taught how to build, use, validate, and share software well. As a result, many spend hours or days doing things badly that could be done well in just a few minutes. The goal of this course is to start changing that so that the students can spend less time wrestling with software and more time doing useful research. Building on the successful data science training programs, such as the Software Carpentry (<a href="http://www.software-carpentry.org/" class="uri">http://www.software-carpentry.org/</a>) and Data Carpentry, and recent development of related software and research, this course exposes students in transportation research and practice to the best practices in scientific computing through hands-on lab sessions and aims to help students tackle the challenge of “drinking from a hose” when dealing with overwhelming amount of data that is increasingly common in transportation research and practice.</p>
+<div id="topics" class="section level2">
+<h2>Topics</h2>
+<p>The table below shows by date lecture topics, computer labs, and readings, and dates that assignments will be handed out and due. Supplement readings will be posted on course website. Topics are subject to adjustment according to the need of students.</p>
+<div id="part-i-data-science-best-practices" class="section level3">
+<h3>Part I: Data Science Best Practices</h3>
+<ol style="list-style-type: decimal">
+<li><a href="01-part1-overview.html">Overview and Introduction</a></li>
+<li><a href="01-rstudio.html">Workflow and RStudio</a></li>
+<li><a href="02-coding.html">R Coding and Scripting Basics</a></li>
+<li><a href="02-gis.html">Working with GIS</a></li>
+<li><a href="03-git.html">Version control using Git</a></li>
+<li><a href="02-ds-best-practices.html">Data Science Best Practices</a></li>
+<li>Part I Wrap Up</li>
+</ol>
+</div>
+<div id="part-ii-tidyverse-workflow" class="section level3">
+<h3>Part II: tidyverse workflow</h3>
+<ol style="list-style-type: decimal">
+<li><a href="06-part2-overview.html">Overview of the tidyverse workflow</a></li>
+<li><a href="07-import.html">Data importing</a></li>
+<li><a href="08-tidy.html">Tidy data</a></li>
+<li><a href="09-dplyr.html">Data manipulation with dplyr</a></li>
+<li><a href="10-visualize.html">Data visulization with ggplot2</a></li>
+<li><a href="11-split-apply-combine.html">Data modeling with Split-Apply-Combine</a></li>
+<li><a href="05-rmarkdown.html">Producing Reports With R Markdown</a></li>
+<li><a href="12-where.html">Part II Wrap Up</a></li>
+</ol>
+</div>
+</div>
+<div id="location-and-time" class="section level2">
+<h2>Location and Time</h2>
+<ul>
+<li>Room: Portland State University Engineering Building 315</li>
+<li>Time:
+<ul>
+<li>Part I 8/6 - 7, 2018 9am - 5pm</li>
+<li>Part II 8/8 - 8/10, 2018 9am - 5pm</li>
+</ul></li>
+</ul>
+</div>
+<div id="prerequisite" class="section level2">
+<h2>Prerequisite</h2>
+<p>Basic knowledge and experience of conduct scientific research with quantitative information; skill of using (or keen to learn) a programming language and/or data processing and statistical software (such as python, R, SPSS, Stata).</p>
+</div>
+<div id="format" class="section level2">
+<h2>Format</h2>
+<p>Classes will all be hands-on sessions with lecture, discussions and labs. Readings drawn from books, articles, and online resources will be assigned. Students are expected to read them before class and to participate in class discussions. A major component of the class is the class project in which students go through the process of data retrieval, processing, conducting analysis, and developing a report/article while learning the best practices of data science.</p>
+</div>
+<div id="software-and-hardware" class="section level2">
+<h2>Software and Hardware</h2>
+<p>This course will use R, the free statistical software, and RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>) as our main interface to R. The lecture and lab instructions will be provided using R. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves.</p>
+</div>
+<div id="textbook-and-readings" class="section level2">
+<h2>Textbook and Readings</h2>
+<p>The course will use the following textbook:</p>
+<ul>
+<li><a href="https://www.amazon.com/Data-Science-Transform-Visualize-Model/dp/1491910399">Wickham, H., Grolemund, G., 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 1 edition. ed. O’Reilly Media</a>.</li>
+</ul>
+<p>An electronic version is available on <a href="http://r4ds.had.co.nz/">Hadley Wickham’s website</a>.</p>
+<p>Journal articles and online resources are used as supplements to the textbook.</p>
+</div>
+</div>
+<div id="acknowledgements" class="section level1">
+<h1>Acknowledgements</h1>
+<p>This course is developed with support from National Institute of Transportation and Communities project #854.</p>
+<div style="width:300px">
+<p><a href="http://nitc.trec.pdx.edu/"><img src="http://nitc.trec.pdx.edu/sites/default/files/nitc_4c_horiz_tag.jpg" alt="NITC" /></a></p>
+</div>
+<p>Parts of the course materials have been adpated from the following sources:</p>
+<ul>
+<li><a href="https://github.com/hadley/r4ds">R for Data Science</a> by Hadley Wickham</li>
+<li><a href="https://software-carpentry.org/lessons/">Software Carpentry workshop lessons</a></li>
+<li><a href="http://stat545.com">UBC Stat 545</a> by Professor Jenny Bryan at UBC</li>
+<li><a href="http://janvitek.org/events/NEU/5110/">NEU 5110 Introduction to Data Science</a> by Professor Jan Vitek</li>
+</ul>
+<p>I would also acknowledge the <a href="https://www.oregonmodels.org/">Oregon Modeling User Group</a> in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.</p>
+<p>The writing-up and website is powered by the <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> package and <a href="https://www.github.com">github</a>.</p>
+</div>
+<div id="license" class="section level1">
+<h1>License</h1>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

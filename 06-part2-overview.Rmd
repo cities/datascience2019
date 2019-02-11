@@ -1,0 +1,38 @@
+---
+title: "Part II: Overview and Introduction"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+From a tidyverse perspective, a data analysis problem is solved in a series of data-centric steps: data acquisition and representation (Import), data cleaning (Tidy), and an iterative sequence of data transformation (Transform), data modelling (Model) and data visualization (Visualize). The end result of the process is to communicate insights obtained from the data (Communicate). This class will take you through all the steps in the process and will teach you how to approach such problems in a systematic manner. You will learn how to design data analysis pipelines as well as how to implement data analysis pipelines in R. The class will also emphasize how elegant code leads to reproducible science.
+
+<center><img src="http://r4ds.had.co.nz/diagrams/data-science.png"></center>
+
+# The tidyverse workflow
+[import-tidy-transform-visualize-model-communicate workflow](http://r4ds.had.co.nz/introduction.html)
+
+# Class project
+
+For the class project for Part II, you are expected to continue what your start in Part I, but closely follow the tidyverse work flow and use the `tidyverse` suite of packages to conduct an analytic project using data of your choice. Your project should involve these steps:
+
+1. Data importing and tidying;
+1. Data transformation;
+1. Data Visualization;
+1. [Optional] Data modeling;
+1. [Optional] Reproducible reporting.
+
+You can use data from your current work or continue a project you have been working on. If you don't have a feasible project idea at the moment, consider continuing to analyze the bike counts data on Hawthorne Bridge and Tilikum Crossing from Part I. Daily traffic counts data for these two bridges can be found [here](https://github.com/cities/datascience2018/tree/master/data). 
+
+Sample analytic questions are:
+
+- After accounting for seasonal variation, is there a trend in bike traffic across these two bridges?
+- How was the bike traffic affected by weather (temperature, precipitation, etc)?
+- Was the bike traffic on the Hawthorne Bridge affected by the opening of Tilikum Crossing?
+
+You can work on any one or all of these questions with visualization and/or modeling after you import, tidy and transform the data when necessary.

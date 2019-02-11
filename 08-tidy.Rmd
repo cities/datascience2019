@@ -1,0 +1,66 @@
+---
+title: "Tidy Data"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tidy Data
+There are three interrelated rules which make a dataset tidy:
+
+- Each variable must have its own column.
+- Each observation must have its own row.
+- Each value must have its own cell.
+
+<center><img src="http://r4ds.had.co.nz/images/tidy-1.png"></center>
+
+That interrelationship leads to an even simpler set of practical instructions:
+
+- Put each dataset in a tibble.
+- Put each variable in a column.
+
+# Lesson
+Download the script that generates the tables for the lesson [here](https://raw.githubusercontent.com/cities/datascience2018/master/code/tidy_data.R)
+
+1. [Tidy Data](http://cities.github.io/datascience/tidy-data.html)
+
+# Exercise
+1. Are the bike counts data tidy data?
+1. If not, why not? And how can we tidy it?
+1. Convert the total bike counts data to a wide format, with each row representing a day, and a column representing the total bike counts for each of the three bridges;
+1. Convert the above data frame in wide format back to long format. 
+1. [Challenge] After tidying the bike counts, using functions in the `tidyr` package, create tables summarizing the average bike counts by bridge and day of week in two different formats:
+
+
+```{r tab-format1, echo=FALSE}
+library(tidyverse)
+options(knitr.kable.NA = '')
+counts_dow <- tribble(
+  ~Bridge, ~Sun, ~Mon, ~Tue, ~Wed, ~Thur, ~Fri, ~Sat,
+  "Hawthorne", NA, NA, NA, NA, NA, NA, NA,
+  "Tilikum", NA, NA, NA, NA, NA, NA, NA
+) 
+
+counts_dow %>% 
+  pander::pander(caption="Bike Counts by Day of Week and Bridge (1st Format)",
+                 missing="")
+```
+
+```{r tab-format2, echo=FALSE}
+counts_dow %>% 
+  tidyr::gather(key="Day of Week", value="counts", Sun:Sat) %>% 
+  tidyr::spread(Bridge, counts) %>% 
+  pander::pander(caption="Bike Counts by Day of Week and Bridge (2nd Format)",
+                 missing="")
+```
+
+Sample code: [tidy_counts.R](code/tidy_counts.R)
+
+# Resources
+1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)
+1. [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+1. [Introduction to tidyr](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
