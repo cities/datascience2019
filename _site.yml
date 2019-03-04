@@ -1,6 +1,6 @@
 name: "Introduction to Data Science"
 navbar:
-  title: "Introduction to Data Science Summer 2018"
+  title: "Introduction to Data Science Spring 2019"
   left:
     - text: "Home"
       href: index.html

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1551677443849.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3526129882",
+    "id" : "E30A54DD",
+    "lastKnownWriteTime" : 1551679028,
+    "last_content_update" : 1551679028797,
+    "path" : "~/TREC/datascience2019/01-part1-overview.Rmd",
+    "project_path" : "01-part1-overview.Rmd",
+    "properties" : {
+        "cursorPosition" : "45,1",
+        "scrollLine" : "20"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
