@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+=======
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user
+>>>>>>> f3bd9d37ca1c4d9cd10bf33f15116f8d93def06f
