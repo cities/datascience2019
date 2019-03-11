@@ -32,11 +32,12 @@ Did you ever feel you are “drinking from a hose” with the amount of data you
 The table below shows by date lecture topics, computer labs, and readings, and dates that assignments will be handed out and due. Supplement readings will be posted on course website. Topics are subject to adjustment according to the need of students.
 
 ### Part I: Data Science Best Practices
-1. [Overview and Introduction](01-part1-overview.html)
-1. [Data Science Best Practices](02-ds-best-practices.html)
-1. [Version control using Git](03-git.html)
+1. [Setup, overview, and introduction](01-part1-overview.html)
+1. [Data science best practices](02-ds-best-practices.html)
+1. The unix shell
+1. [Version control using git](03-git.html)
 1. [Workflow and RStudio](01-rstudio.html)
-1. [R Coding and Scripting Basics](02-coding.html)
+1. [R coding and scripting basics](02-coding.html)
 1. [Data manipulation with dplyr and tidyr](09-dplyr.html)
 1. [Data visulization with ggplot2](10-visualize.html)
 1. Part I Wrap Up
