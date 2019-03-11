@@ -1,0 +1,21 @@
+---
+title: "The Unix Shell"
+output:
+  html_document:
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Why use the command shell?
+
+## Navigating directories and files
+
+## Working with directories and files
+
+## Searching for files and things within files
+
+## Other resources
+1. Reference
+1. Printable unix command cheatsheet
