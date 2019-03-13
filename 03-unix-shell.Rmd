@@ -2,6 +2,7 @@
 title: "The Unix Shell"
 output:
   html_document:
+    toc: FALSE
 ---
 
 ```{r setup, include=FALSE}
