@@ -34,7 +34,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 ### Part I: Data Science Best Practices
 1. [Setup, overview, and introduction](01-part1-overview.html)
 1. [Data science best practices](02-ds-best-practices.html)
-1. The unix shell
+1. [The unix shell](03-unix-shell.html)
 1. [Version control using git](03-git.html)
 1. [Workflow and RStudio](01-rstudio.html)
 1. [R coding and scripting basics](02-coding.html)
@@ -94,7 +94,7 @@ Parts of the course materials have been adpated from the following sources:
 - [UBC Stat 545](http://stat545.com) by Professor Jenny Bryan at UBC
 - [NEU 5110 Introduction to Data Science](http://janvitek.org/events/NEU/5110/) by Professor Jan Vitek
 
-I would also acknowledge the [Oregon Modeling User Group](https://www.oregonmodels.org/) in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.
+We would also acknowledge the [Oregon Modeling User Group](https://www.oregonmodels.org/) in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.
 
 The writing-up and website is powered by the [blogdown](https://bookdown.org/yihui/blogdown/) package and [github](https://www.github.com).
 
