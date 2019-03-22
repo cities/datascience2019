@@ -1,18 +1,23 @@
-# Where to go from here
+---
+title: "Where to go from here"
+output: 
+  html_document:
+    toc: true
+---
 
 Practice makes perfection. Use what you learned here as much as possible in your own research and work, even though you may not master everything first off. Once you find a solution to your data science problem, think whether it conforms the [Best practices for data science]; If not, can you improve your solution according to the best practices?
 
-## Noticeable features not covered
+# Noticeable features not covered
 R is getting more powerful all the time. There are many exciting features and packages that we have not covered and many more are emerging. Below are a few features I think are worth mentioning.
 
-### Creating R packages
+## Creating R packages
 It is probably the easiest to share your R code with others by creating a R package for it. It is not as intimidating as it sounds. Fong Chun Chan wrote [a tutorial for creating your first R package](http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html). For a more comprehensive resource, check out Hadley Wickham's [R Packages](R packages).
 
-### Automate testing your code
+## Automate testing your code
 
 It is always a good idea to test your code with simple inputs to make sure it work correctly before adding complexity and deploying it for actual work (see best practices for data science 5). There are ways to automate the tests, so you will not forget to run the tests. Hadley Wickham writes about [testing for R packages](http://r-pkgs.had.co.nz/tests.html) and [`testthat` is a R package specifically to make testing](https://github.com/r-lib/testthat). And if you use GitHub or other popular public version control website, it is possible to use Travis-CI to do "continuous integration" tests for your code. Julia Silge has [a nice tutorial for beginners](https://juliasilge.com/blog/beginners-guide-to-travis/).
 
-### Automate your workflow
+## Automate your workflow
 
 If you are seasoned programmer and are familiar with the `make` toolchain, you can use it to automate your workflow too. Professor Jenny Bryan provides [a tutorial](http://stat545.com/automation00_index.html) for her STAT 545 class.
 
@@ -27,11 +32,11 @@ library(devtools)
 install_github("richfitz/remake")
 ```
 
-### Develop interactive apps with Shiny
+## Develop interactive apps with Shiny
 
 Shiny allows you to develop interactive apps that run on top of R. Again Prof Jenny Bryan has a nice [tutorial for getting started with Shiny](http://stat545.com/shiny00_index.html).
 
-## Where to find help
+# Where to find help
 
 1. Help documents;
 1. Package vignett and manual;

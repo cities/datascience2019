@@ -2,7 +2,7 @@
 title: "Data manipulation with dplyr"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}

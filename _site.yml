@@ -1,6 +1,6 @@
 name: "Introduction to Data Science"
 navbar:
-  title: "Introduction to Data Science Summer 2018"
+  title: "Introduction to Data Science Spring 2019"
   left:
     - text: "Home"
       href: index.html
@@ -23,11 +23,25 @@ navbar:
         - text: "Creating R Packages"
           href: 04-package.html
         - text: "R Markdown"
-          href: 05-markdown.html
+          href: 05-rmarkdown.html
     - text: Part II
       menu:
-        - text: "TODO"
-
+        - text: "Overview"
+          href: 06-part2-overview.html
+        - text: "Data importing"
+          href: 07-import.html
+        - text: "Tidy Data"
+          href: 08-tidy.html
+        - text: "Data manipulation with dplyr"
+          href: 09-dplyr.html
+        - text: "Data visualization with ggplot2"
+          href: 10-visualize.html
+        - text: "Split-Apply-Combine Pattern"
+          href: 11-split-apply-combine.html
+        - text: "Where to go from here"
+          href: 12-where.html
+        
+        
 output:
   html_document:
     theme: cosmo

@@ -2,7 +2,7 @@
 title: "Part II: Overview and Introduction"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
