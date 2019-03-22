@@ -20,8 +20,8 @@ panderOptions('keep.trailing.zeros', TRUE)
 panderOptions('keep.line.breaks', TRUE)
 ```
 
-- Course Website: https://cities.github.io/datascience2018
-- GitHub repository: https://github.com/cities/datascience2018
+- Course Website: https://cities.github.io/datascience2019
+- GitHub repository: https://github.com/cities/datascience2019
 
 # Syllabus
 
