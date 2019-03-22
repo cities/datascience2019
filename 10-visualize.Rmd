@@ -2,7 +2,7 @@
 title: "Data visulization with ggplot2"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}

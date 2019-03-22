@@ -4,22 +4,22 @@ title: "Working with Maps and GIS data"
 #date: "8/21/2017"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Notable packages
+# Notable packages
 
-### The tidycensus packages
+## The tidycensus packages
 - Website: https://walkerke.github.io/tidycensus/
 - Install with `install.packages("tidycensus")`
 - Vignettes: https://walkerke.github.io/tidycensus/articles/basic-usage.html
 - Reference: https://walkerke.github.io/tidycensus/reference/index.html
 
-### The simple feature packages
+## The simple feature packages
 - Website: https://github.com/r-spatial/sf
 - Install with `install.packages("sf")`
     - On Mac, you may need to install `udunits` first, for example, with [homebrew](https://stackoverflow.com/a/42387825/688693)
@@ -28,14 +28,14 @@ knitr::opts_chunk$set(echo = TRUE)
 - Reference: https://r-spatial.github.io/sf/reference/index.html
 
 
-## Code examples
+# Code examples
 
-### Data files used in the examples 
+## Data files used in the examples 
 
 1. [Portland Metro 1994 TAZ shape file](data/taz1260.shp.zip): Download & unzip to `data` subdirectory of your RStudio project folder
 2. [Portland Metro 1994 Survey geocode.raw.zip](data/portland94_geocode.raw.zip)
 
-### Map ACS 2012-16 Median Household Income by Census Tract
+## Map ACS 2012-16 Median Household Income by Census Tract
 
 ```{r}
 ## Install the tidycensus package if you haven't yet
@@ -47,7 +47,7 @@ library(dplyr)
 
 ## setup cenus api key
 ## signup your census api key at http://api.census.gov/data/key_signup.html
-#census_api_key("YOUR_CENSUS_API_KEY") # 
+census_api_key("5d1693be6ce12231248f292759f241c1ead3ed53") # note: needed to re-build website
 portland_tract_medhhinc <- get_acs(geography = "tract", 
                         year = 2016, # 2012-2016
                         variables = "B19013_001",  # Median Household Income in the Past 12 Months
@@ -59,11 +59,11 @@ portland_tract_medhhinc <- get_acs(geography = "tract",
   geom_sf(aes(fill = estimate)) +
   coord_sf(datum = NA) + theme_minimal())
 
-ggsave("output/mymap.pdf", myplot)
+#ggsave("output/mymap.pdf", myplot)
 
 ```
 
-### Interactive Maps of ACS 2012-16 Median Household Income by Census Tract
+## Interactive Maps of ACS 2012-16 Median Household Income by Census Tract
 
 ```{r, results="asis"}
 ## Install the mapview package if you haven't yet
@@ -76,7 +76,7 @@ mapview(portland_tract_medhhinc %>% select(estimate),
         col.regions = sf.colors(10), alpha = 0.1)
 ```
 
-### Example of spatial analysis: spatial join
+## Example of spatial analysis: spatial join
 
 ```{r}
 library(sf)

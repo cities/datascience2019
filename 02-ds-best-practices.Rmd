@@ -1,3 +1,12 @@
+---
+title: "Data Science Best Practices"
+#author: "Liming Wang"
+#date: "8/21/2017"
+output: 
+  html_document:
+    toc: true
+---
+
 # Best Practices in Data Science 
 
 ## Readings
