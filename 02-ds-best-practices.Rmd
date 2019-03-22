@@ -53,5 +53,5 @@ These are the best practices for data science recommended by [Wilson et al](http
 
 In small groups, each picks (or is assigned) a practice and discusses:
 
-1. What the current practice? why it is not a good practice and why the best practice is better?
-2. How we can move the current practice to the best practice?
+1. What is your current practice? How does it compare with the above recommended best practices?
+2. How we can move from current practices to best practices?
