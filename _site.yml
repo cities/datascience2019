@@ -6,6 +6,15 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Part I"
+      menu: 
+        - text: "Overview"
+          href: 01-part1-overview.html
+        - text: "Introduction to R and RStudio"
+          href: 01-rstudio.html
+        - text: "Working with Maps and GIS data"
+          href: ""
+          
 
 output:
   html_document:
@@ -19,5 +28,5 @@ output:
       in_header: include_head.html
       #before_body: include_header.html
       #after_body: include_footer.html
-    css: css/rmarkdown.css
+    #css: css/rmarkdown.css
 output_dir: "docs"
