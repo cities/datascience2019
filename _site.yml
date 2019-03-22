@@ -12,8 +12,13 @@ navbar:
           href: 01-part1-overview.html
         - text: "Introduction to R and RStudio"
           href: 01-rstudio.html
+        - text: "R Coding Basics"
+          href: 02-coding.html
+        - text: "Data Science Best Practices"
+          href: 02-ds-best-practices.html
         - text: "Working with Maps and GIS data"
-          href: ""
+          href: 02-gis.html
+        
           
 
 output:
