@@ -1,10 +1,10 @@
 ---
-title: "Creating R Package"
+title: "Creating R Packages"
 #author: "Liming Wang"
 #date: "8/21/2017"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}

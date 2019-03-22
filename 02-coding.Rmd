@@ -4,18 +4,18 @@ title: "R Coding Basics"
 #date: "8/21/2017"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## The tidyverse packages
+# The tidyverse packages
 - Website: http://www.tidyverse.org/packages/
 - Install with `install.packages("tidyverse")`
 
-## R Coding Basics
+# R Coding Basics
 
 This section assumes students know little about R and gets them up to speed with the basics. I am now convinced that it might be easier to teach beginners `tidyverse` than the base R, as argued by [David Robinson](http://varianceexplained.org/r/teach-tidyverse/). We will dive right into tidyverse, which will be covered in more depth in Part II.
 

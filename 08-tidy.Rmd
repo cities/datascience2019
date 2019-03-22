@@ -2,7 +2,7 @@
 title: "Tidy Data"
 output: 
   html_document:
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
