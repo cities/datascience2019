@@ -8,22 +8,26 @@ navbar:
       href: about.html
     - text: "Part I"
       menu: 
-        - text: "Overview"
-          href: 01-part1-overview.html
-        - text: "Introduction to R and RStudio"
-          href: 01-rstudio.html
-        - text: "R Coding Basics"
-          href: 02-coding.html
-        - text: "Data Science Best Practices"
+        - text: "Data science best practices"
           href: 02-ds-best-practices.html
-        - text: "Working with Maps and GIS data"
-          href: 02-gis.html
-        - text: "Version Control with Git"
+        - text: "Setup, overview, and introduction"
+          href: 01-part1-overview.html
+        - text: "The Unix shell"
+          href: 03-unix-shell.html
+        - text: "Version control with Git"
           href: 03-git.html
-        - text: "Creating R Packages"
-          href: 04-package.html
-        - text: "R Markdown"
-          href: 05-rmarkdown.html
+        - text: "Workflow and RStudio"
+          href: 01-rstudio.html
+        - text: "R coding and scripting basics"
+          href: 02-coding.html
+        - text: "Data visualization with ggplot2"
+          href: 10-visualize.html          
+        - text: "Data manipulation with dplyr"
+          href: 09-dplyr.html
+        - text: "Data manipulation with tidyr"
+          href: 09-tidyr.html
+        - text: "Class project"
+          href: 10-classproject.html
     - text: Part II
       menu:
         - text: "Overview"
@@ -32,14 +36,17 @@ navbar:
           href: 07-import.html
         - text: "Tidy Data"
           href: 08-tidy.html
-        - text: "Data manipulation with dplyr"
-          href: 09-dplyr.html
-        - text: "Data visualization with ggplot2"
-          href: 10-visualize.html
+        - text: "Working with Maps and GIS data"
+          href: 02-gis.html
         - text: "Split-Apply-Combine Pattern"
           href: 11-split-apply-combine.html
         - text: "Where to go from here"
           href: 12-where.html
+        - text: "Creating R Packages"
+          href: 04-package.html
+        - text: "R Markdown"
+          href: 05-rmarkdown.html
+
         
         
 output:
@@ -54,10 +61,6 @@ output:
       in_header: include_head.html
       #before_body: include_header.html
       #after_body: include_footer.html
-<<<<<<< HEAD
-    css: css/rmarkdown.css
-output_dir: "docs"
-=======
     #css: css/rmarkdown.css
 output_dir: "docs"
->>>>>>> master
+

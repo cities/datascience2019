@@ -195,9 +195,6 @@ $(document).ready(function () {
 });
 </script>
 
-<<<<<<< HEAD
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -254,64 +251,6 @@ $(document).ready(function () {
 }
 </style>
 
-=======
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
->>>>>>> master
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -440,6 +379,7 @@ div.tocify {
 
 
 
+
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -466,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
+    </li>
+    <li>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -508,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -551,14 +500,16 @@ div.tocify {
 <div id="part-i-data-science-best-practices" class="section level3">
 <h3>Part I: Data Science Best Practices</h3>
 <ol style="list-style-type: decimal">
-<li><a href="01-part1-overview.html">Setup, overview, and introduction</a></li>
 <li><a href="02-ds-best-practices.html">Data science best practices</a></li>
-<li><a href="03-unix-shell.html">The unix shell</a></li>
-<li><a href="03-git.html">Version control using git</a></li>
+<li><a href="01-part1-overview.html">Setup, overview, and introduction</a></li>
+<li><a href="03-unix-shell.html">The Unix shell</a></li>
+<li><a href="03-git.html">Version control using Git</a></li>
 <li><a href="01-rstudio.html">Workflow and RStudio</a></li>
 <li><a href="02-coding.html">R coding and scripting basics</a></li>
-<li><a href="09-dplyr.html">Data manipulation with dplyr and tidyr</a></li>
 <li><a href="10-visualize.html">Data visulization with ggplot2</a></li>
+<li><a href="09-dplyr.html">Data manipulation with dplyr</a></li>
+<li><a href="09-tidyr.html">Data manipulation with tidyr</a></li>
+<li><a href="10-classproject.html">Class project</a></li>
 <li>Part I Wrap Up</li>
 </ol>
 </div>
@@ -578,12 +529,8 @@ div.tocify {
 <div id="location-and-time" class="section level2">
 <h2>Location and Time</h2>
 <ul>
-<li>Room: Portland State University Engineering Building 315</li>
-<li>Time:
-<ul>
-<li>Part I 4/3 - 4/5, 2018 9am - 5pm</li>
-<li>Part II 4/8 - 4/10, 2018 9am - 5pm</li>
-</ul></li>
+<li>Room: Portland State University Engineering Building, 350</li>
+<li>Time: - Part I 4/3 - 4/5, 9am - 5pm - Part II 4/8 - 4/10, 9am - 5pm</li>
 </ul>
 </div>
 <div id="prerequisite" class="section level2">
@@ -592,20 +539,20 @@ div.tocify {
 </div>
 <div id="format" class="section level2">
 <h2>Format</h2>
-<p>Classes will all be hands-on sessions with lecture, discussions, and labs. Readings drawn from books, articles, and online resources will be assigned. Students are expected to read them before class and to participate in class discussions. A major component of the class is the class project in which students go through the process of data retrieval, processing, conducting analysis, and developing a report/article while learning the best practices of data science.</p>
+<p>Classes will all be hands-on sessions with lecture, discussions, and labs. Readings drawn from books, articles, and online resources will be assigned. Students are expected to read them before class and to participate in class discussions. Highlights of the class include creating a work product in which students go through the process of data retrieval, processing, conducting analysis, and developing a report/article while learning the best practices of data science.</p>
 </div>
 <div id="software-and-hardware" class="section level2">
 <h2>Software and Hardware</h2>
 <p>This course will use R, the free statistical software, and RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>) as our main interface to R. The lecture and lab instructions will be provided using R. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves.</p>
 </div>
-<div id="textbook-and-readings" class="section level2">
-<h2>Textbook and Readings</h2>
-<p>The course will use the following textbook:</p>
+<div id="resources-and-course-materials" class="section level2">
+<h2>Resources and course materials</h2>
 <ul>
-<li><a href="https://www.amazon.com/Data-Science-Transform-Visualize-Model/dp/1491910399">Wickham, H., Grolemund, G., 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 1 edition. ed. O’Reilly Media</a>.</li>
+<li><a href="http://r4ds.had.co.nz/">R for Data Science</a> by Hadley Wickham</li>
+<li><a href="https://software-carpentry.org/lessons/">Software Carpentry workshop lessons</a></li>
+<li><a href="http://stat545.com">UBC Stat 545</a> by Professor Jenny Bryan at UBC</li>
+<li><a href="http://janvitek.org/events/NEU/5110/">NEU 5110 Introduction to Data Science</a> by Professor Jan Vitek</li>
 </ul>
-<p>An electronic version is available on <a href="http://r4ds.had.co.nz/">Hadley Wickham’s website</a>.</p>
-<p>Journal articles and online resources are used as supplements to the textbook.</p>
 </div>
 </div>
 <div id="acknowledgements" class="section level1">
@@ -614,14 +561,7 @@ div.tocify {
 <div style="width:300px">
 <p><a href="http://nitc.trec.pdx.edu/"><img src="http://nitc.trec.pdx.edu/sites/default/files/nitc_4c_horiz_tag.jpg" alt="NITC" /></a></p>
 </div>
-<p>Parts of the course materials have been adpated from the following sources:</p>
-<ul>
-<li><a href="https://github.com/hadley/r4ds">R for Data Science</a> by Hadley Wickham</li>
-<li><a href="https://software-carpentry.org/lessons/">Software Carpentry workshop lessons</a></li>
-<li><a href="http://stat545.com">UBC Stat 545</a> by Professor Jenny Bryan at UBC</li>
-<li><a href="http://janvitek.org/events/NEU/5110/">NEU 5110 Introduction to Data Science</a> by Professor Jan Vitek</li>
-</ul>
-<p>I would also acknowledge the <a href="https://www.oregonmodels.org/">Oregon Modeling User Group</a> in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.</p>
+<p>We would also acknowledge the <a href="https://www.oregonmodels.org/">Oregon Modeling User Group</a> in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.</p>
 <p>The writing-up and website is powered by the <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> package and <a href="https://www.github.com">github</a>.</p>
 </div>
 <div id="license" class="section level1">
