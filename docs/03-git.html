@@ -406,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -478,48 +487,21 @@ div.tocify {
 </div>
 
 
-<div id="version-control-with-git" class="section level1">
-<h1>Version Control with Git</h1>
+<div id="why-learn-version-control" class="section level2">
+<h2>Why learn version control?</h2>
+<ul>
+<li>Allows for collaborators to work in parallel.</li>
+<li>Eliminates the need to come up with file names to indicate a “final” versus a “final-final” file version.</li>
+</ul>
+</div>
 <div id="install-git" class="section level2">
 <h2>Install Git</h2>
-<div id="for-windows" class="section level3">
-<h3>for windows</h3>
-<ol style="list-style-type: decimal">
-<li>Download the Git for Windows installer from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>.</li>
-<li>Run the installer and follow the steps bellow:
-<ol style="list-style-type: decimal">
-<li>Click on “Next”.</li>
-<li>Click on “Next”.</li>
-<li>Keep “<strong>Use Git from the Windows Command Prompt</strong>” selected and click on “Next”. If you forgot to do this, rerun the installer and select the appropriate option.</li>
-<li>Click on “Next”.</li>
-<li>Keep “<strong>Checkout Windows-style, commit Unix-style line endings</strong>” selected and click on “Next”.</li>
-<li>Keep “<strong>Use Windows’ default console window</strong>” selected and click on “Next”.</li>
-<li>Click on “Install”.</li>
-<li>Click on “Finish”.</li>
-</ol></li>
-<li>If your “HOME” environment variable is not set (or you don’t know what this is):
-<ol style="list-style-type: decimal">
-<li>Open command prompt (Open Start Menu then type ‘cmd’ (without quotes) and press [Enter])</li>
-<li>Type the following line into the command prompt window exactly as shown: <code>setx HOME &quot;%USERPROFILE%&quot;</code></li>
-<li>Press [Enter], you should see <code>SUCCESS: Specified value was saved</code>.</li>
-<li>Quit command prompt by typing exit then pressing [Enter]</li>
-</ol></li>
-</ol>
+<p>For installation directions please refer to the <a href="01-part1-overview.html">Setup, overview, and introduction</a> page.</p>
 </div>
-<div id="for-mac" class="section level3">
-<h3>For Mac</h3>
-<p>Install <a href="https://sourceforge.net/projects/git-osx-installer/files/">git-osx-installer</a>.</p>
-</div>
-<div id="for-linux" class="section level3">
-<h3>For Linux</h3>
-<p>install `git’ from your distro’s package manager.</p>
-</div>
-</div>
-<div id="lesson" class="section level2">
-<h2>Lesson</h2>
-<p>Adapted from <a href="http://swcarpentry.github.io/git-novice/">Version Control with Git by Software Carpentry</a>.</p>
+<div id="lessons" class="section level2">
+<h2>Lessons</h2>
 <ul>
-<li><a href="http://swcarpentry.github.io/git-novice/01-basics/">A quick overview of Version Control</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/01-basics/index.html">A quick overview of Version Control</a></li>
 <li>Start off by registering a github account at <a href="https://github.com" class="uri">https://github.com</a></li>
 <li>Use your github user name and email to config git. Open a Shell/Command line window from RStudio menu <strong>Tools/Shell…</strong>, and modify and run the following commands:</li>
 </ul>
@@ -527,31 +509,28 @@ div.tocify {
 git config --global user.email &quot;lmwang+datascience@gmail.com&quot;
 git config --global color.ui &quot;auto&quot;</code></pre>
 <ul>
-<li><p>Let’s turn the RStudio project you have been working on into a git repository and commit it to GitHub by following these steps: <a href="http://happygitwithr.com/existing-github-last.html" class="uri">http://happygitwithr.com/existing-github-last.html</a></p></li>
-<li><a href="http://happygitwithr.com/credential-caching.html">Cache credentials</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/03-create/index.html">Creating a repository</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/04-changes/index.html">Tracking changes</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/05-history/index.html">Exploring history</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/06-ignore/index.html">Ignoring things</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/07-github/index.html">Remotes in GitHub</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/08-collab/">Collaborating</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/09-conflict/">Conflicts</a></li>
-<li><p><a href="http://happygitwithr.com/usage-git-cmds.html">Review of common git commands</a></p></li>
+<li><a href="http://happygitwithr.com/usage-git-cmds.html">Review of common git commands</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/13-hosting/index.html">Hosting</a></li>
 </ul>
 </div>
-<div id="exercise" class="section level2">
-<h2>Exercise</h2>
-<ol style="list-style-type: decimal">
-<li>If you haven’t yet, commit your RStudio project to github;</li>
-<li>Add the GitHub account of your team partner as a collaborator to your repo;</li>
-<li>Exchange URL to your github repo with your team partner;</li>
-<li>Checkout your team partner’s repo in RStudio (File/New Project …, then Verision Control);</li>
-<li>Review his/her code and add comments for suggestions where the code can be improved;</li>
-<li>Commit your change (comments) with a proper commit message;</li>
-<li>Push your commit to GitHub;</li>
-<li>After your partner pushes his/her commit, switch back to your own repo &amp; pull to get the updated files with your partner’s comments;</li>
-<li>Responded to the comments with your own comments or changes to your code, commit (with a commit message) and then push to GitHub;</li>
-<li>Repeat the above steps a few times.</li>
-</ol>
+<div id="optional-lessons" class="section level2">
+<h2>Optional lessons</h2>
+<ul>
+<li><a href="http://swcarpentry.github.io/git-novice/10-open/index.html">Open Science</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/11-licensing/index.html">Licensing</a></li>
+<li><a href="http://swcarpentry.github.io/git-novice/12-citation/index.html">Citation</a></li>
+<li><a href="http://happygitwithr.com/credential-caching.html">Cache credentials</a></li>
+</ul>
 </div>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources:</h1>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
 <ol style="list-style-type: decimal">
 <li><a href="http://happygitwithr.com/">Happy Git with R</a></li>
 <li><a href="https://try.github.io">try Git</a></li>

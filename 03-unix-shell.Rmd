@@ -1,0 +1,28 @@
+---
+title: "The Unix Shell"
+output:
+  html_document:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Why use the shell?
+The benefits of learning the shell outweighs the seemingly steep learning curve. Learning the command line interface is inevitable as one becomes more immersed in data science related tasks. You will find that it is often the easiest way to connect to other machines and servers. As you learn more about the shell and its capabilities you will find that you can write commands to handle large volumes of data automatically.
+
+In this section we will cover a few basic commands and a brief introduction to the Unix shell.
+
+## Setup
+1. Download [data-shell.zip](https://raw.githubusercontent.com/cities/datascience2019/master/data/data-shell.zip) (Right click & select Save link as...) and move the file to your Desktop.
+2. Unzip/extract the file.
+3. Open a terminal and type `cd` then press the Enter key.
+
+## Lessons
+1. [Navigating directories and files](https://swcarpentry.github.io/shell-novice/02-filedir/index.html)
+1. [Working with directories and files](https://swcarpentry.github.io/shell-novice/03-create/index.html)
+1. [Searching for files and things within files](https://swcarpentry.github.io/shell-novice/07-find/index.html)
+
+## Additional resources
+1. For additional tutorials look [here](https://swcarpentry.github.io/shell-novice/) and [here](http://swcarpentry.github.io/shell-extras/)

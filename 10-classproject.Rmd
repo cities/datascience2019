@@ -1,0 +1,6 @@
+---
+title: "Class Project"
+output: 
+  html_document:
+    toc: TRUE
+---

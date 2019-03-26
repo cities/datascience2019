@@ -11,7 +11,7 @@
 
 
 
-<title>Setup, Overview, and Introduction</title>
+<title>The Unix Shell</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -482,97 +482,37 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Setup, Overview, and Introduction</h1>
+<h1 class="title toc-ignore">The Unix Shell</h1>
 
 </div>
 
 
-<div id="set-up-your-computer" class="section level1">
-<h1>Set up your computer</h1>
-<div id="installing-r-and-r-studio" class="section level2">
-<h2>Installing R and R Studio</h2>
-<p>R and R Studio are two different software packages. You must install R first. - Download and install the latest version of F from <a href="https://ftp.osuosl.org/pub/cran/" class="uri">https://ftp.osuosl.org/pub/cran/</a> . Or, go to www.r-project.org and and click on the <em>download R</em> link and choose your preferred CRAN mirror. You will have the option to download and install R for Linux, Mac, or Windows. (<em>NOTE: Requires administrator/root privellege.</em>) - Install the latest RStudio Desktop free version from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> .</p>
-<p>If you already have R and RStudio installed on your laptop, it’d be a good idea to check their version and upgrade them to the latest (if they are not).</p>
+<div id="why-use-the-shell" class="section level2">
+<h2>Why use the shell?</h2>
+<p>The benefits of learning the shell outweighs the seemingly steep learning curve. Learning the command line interface is inevitable as one becomes more immersed in data science related tasks. You will find that it is often the easiest way to connect to other machines and servers. As you learn more about the shell and its capabilities you will find that you can write commands to handle large volumes of data automatically.</p>
+<p>In this section we will cover a few basic commands and a brief introduction to the Unix shell.</p>
 </div>
-<div id="installing-git" class="section level2">
-<h2>Installing Git</h2>
-<p>Directions are a courtesy of Software Carpentry.</p>
-<div id="windows" class="section level3">
-<h3>Windows</h3>
-<p>This will provide you with Git and Git Bash.</p>
-<p><a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a></p>
+<div id="setup" class="section level2">
+<h2>Setup</h2>
 <ol style="list-style-type: decimal">
-<li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
-<li>Run the installer and follow the steps bellow:
-<ol style="list-style-type: decimal">
-<li>Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the Information, location, components, and start menu screens.</li>
-<li><em>Select “Use the nano editor by default” and click on “Next”.</em></li>
-<li>Keep “Use Git from the Windows Command Prompt” selected and click on “Next”. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.</li>
-<li>Click on “Next”.</li>
-<li>Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.</li>
-<li><em>Select “Use Windows’ default console window” and click on “Next”.</em></li>
-<li>Click on “Install”.</li>
-<li>Click on “Finish”.</li>
-</ol></li>
-<li>If your “HOME” environment variable is not set (or you don’t know what this is):
-<ol style="list-style-type: decimal">
-<li>Open command prompt (Open Start Menu then type ‘cmd’ (without quotes) and press [Enter])</li>
-<li>Type the following line into the command prompt window exactly as shown: <code>setx HOME &quot;%USERPROFILE%&quot;</code></li>
-<li>Press [Enter], you should see <code>SUCCESS: Specified value was saved</code>.</li>
-<li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
-</ol></li>
+<li>Download <a href="https://raw.githubusercontent.com/cities/datascience2019/master/data/data-shell.zip">data-shell.zip</a> (Right click &amp; select Save link as…) and move the file to your Desktop.</li>
+<li>Unzip/extract the file.</li>
+<li>Open a terminal and type <code>cd</code> then press the Enter key.</li>
 </ol>
 </div>
-<div id="mac" class="section level3">
-<h3>Mac</h3>
-<p><a href="https://www.youtube.com/watch?v=9LQhwETCdwY">Video Tutorial</a></p>
+<div id="lessons" class="section level2">
+<h2>Lessons</h2>
 <ol style="list-style-type: decimal">
-<li><em>For OS X 10.9 and higher</em>, install Git for Mac by downloading and running the most recent “mavericks” installer from <a href="https://sourceforge.net/projects/git-osx-installer/files/">this list</a>. Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your <code>/Applications</code> folder, as Git is a command line program.</li>
-<li><em>For older versions of OS X (10.5-10.8)</em> use the most recent available installer labelled “snow-leopard” available <a href="https://sourceforge.net/projects/git-osx-installer/files/">here</a>.</li>
+<li><a href="https://swcarpentry.github.io/shell-novice/02-filedir/index.html">Navigating directories and files</a></li>
+<li><a href="https://swcarpentry.github.io/shell-novice/03-create/index.html">Working with directories and files</a></li>
+<li><a href="https://swcarpentry.github.io/shell-novice/07-find/index.html">Searching for files and things within files</a></li>
 </ol>
 </div>
-<div id="for-linux" class="section level3">
-<h3>For Linux</h3>
-<p>If Git is not already available on your machine you can try to install it via your distro’s package manager. For Debian/Ubuntu run <code>sudo apt-get install git</code> and for Fedora run <code>sudo dnf install git</code>.</p>
-</div>
-<div id="installation-verification" class="section level3">
-<h3>Installation Verification</h3>
-Launch RStudio and you should see a program window like this:
-<center>
-<img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png">
-</center>
-</div>
-</div>
-</div>
-<div id="what-is-data-science" class="section level1">
-<h1>What is Data Science?</h1>
-<p>According to Wikipedia:</p>
-<blockquote>
-<p>Data science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining.</p>
-<p>Data science is a “concept to unify statistics, data analysis, machine learning and their related methods” in order to “understand and analyze actual phenomena” with data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, information science, and computer science.</p>
-</blockquote>
-<p><a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram"><img src="https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w" alt="Data Science Venn Diagram" /></a></p>
-<p>Data Science Venn Diagram by Drew Conway</p>
-<div id="resources" class="section level2">
-<h2>Resources</h2>
-<ul>
-<li><a href="https://datascience.berkeley.edu/about/what-is-data-science/">What is Data Science?</a> by <a href="mailto:datascience@Berkeley">datascience@Berkeley</a></li>
-<li><a href="http://www.dataists.com/2010/09/a-taxonomy-of-data-science/">A Taxonomy of Data Science</a> by Hilary Mason and Chris Wiggins</li>
-<li><a href="https://www.youtube.com/watch?v=cpbtcsGE0OA">“You can’t do data science in a GUI”</a> by Hadley Wickham</li>
-<li><a href="https://blogs.wsj.com/cio/2014/05/02/why-do-we-need-data-science-when-weve-had-statistics-for-centuries/">Why Do We Need Data Science When We’ve Had Statistics for Centuries?</a> by Irving Wladawsky-Berger</li>
-</ul>
-</div>
-</div>
-<div id="why-r" class="section level1">
-<h1>Why R</h1>
-<ul>
-<li><a href="https://www.r-project.org/about.html">Free, as in beer &amp; speech</a></li>
-<li>Large and growing community, with <a href="https://www.rdocumentation.org/trends">More than 15,000 packages and counting</a></li>
-<li>Powerful and flexible</li>
-<li><a href="http://www.r-graph-gallery.com/">Graphics Gallery</a></li>
-<li><a href="https://shiny.rstudio.com/gallery/">Interactive Web Apps: Interactive Plots, Dashboard, Widget …</a></li>
-<li>Packages for doing statistics &amp; machine learning, creating documents, grabbing/processing data …</li>
-</ul>
+<div id="additional-resources" class="section level2">
+<h2>Additional resources</h2>
+<ol style="list-style-type: decimal">
+<li>For additional tutorials look <a href="https://swcarpentry.github.io/shell-novice/">here</a> and <a href="http://swcarpentry.github.io/shell-extras/">here</a></li>
+</ol>
 </div>
 
 
