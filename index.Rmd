@@ -36,11 +36,11 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Setup, overview, and introduction](01-part1-overview.html)
 1. [The Unix shell](03-unix-shell.html)
 1. [Version control using Git](03-git.html)
-1. [Workflow and RStudio](01-rstudio.html)
 1. [R coding and scripting basics](02-coding.html)
 1. [Data visulization with ggplot2](10-visualize.html)
 1. [Data manipulation with dplyr](09-dplyr.html)
 1. [Data manipulation with tidyr](09-tidyr.html)
+1. [Workflow and RStudio](01-rstudio.html)
 1. [Class project](10-classproject.html)
 1. Part I Wrap Up
 
