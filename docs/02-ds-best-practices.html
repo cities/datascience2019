@@ -195,7 +195,6 @@ $(document).ready(function () {
 });
 </script>
 
-<<<<<<< HEAD
 <!-- tabsets -->
 
 <style type="text/css">
@@ -252,66 +251,6 @@ $(document).ready(function () {
 }
 </style>
 
-=======
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
->>>>>>> d5e0612ec7d305effe949ec439a383e7dd1232b7
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -440,6 +379,7 @@ div.tocify {
 
 
 
+
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -466,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
+    </li>
+    <li>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -508,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
