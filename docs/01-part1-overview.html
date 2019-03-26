@@ -406,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
+    </li>
+    <li>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -482,26 +491,26 @@ div.tocify {
 <h1>Set up your computer</h1>
 <div id="installing-r-and-r-studio" class="section level2">
 <h2>Installing R and R Studio</h2>
-<p>R and R Studio are two different software packages. You must install R first. - Download and install R 3.5.2 from <a href="https://ftp.osuosl.org/pub/cran/" class="uri">https://ftp.osuosl.org/pub/cran/</a> . Or, go to www.r-project.org and and click on the <em>download R</em> link and choose your preferred CRAN mirror. You will have the option to download and install R for Linux, Mac, or Windows. (<em>NOTE: Requires administrator/root privellege.</em>) - Install the latest RStudio Desktop free version from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> .</p>
+<p>R and R Studio are two different software packages. You must install R first. - Download and install the latest version of F from <a href="https://ftp.osuosl.org/pub/cran/" class="uri">https://ftp.osuosl.org/pub/cran/</a> . Or, go to www.r-project.org and and click on the <em>download R</em> link and choose your preferred CRAN mirror. You will have the option to download and install R for Linux, Mac, or Windows. (<em>NOTE: Requires administrator/root privellege.</em>) - Install the latest RStudio Desktop free version from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> .</p>
 <p>If you already have R and RStudio installed on your laptop, it’d be a good idea to check their version and upgrade them to the latest (if they are not).</p>
 </div>
 <div id="installing-git" class="section level2">
 <h2>Installing Git</h2>
-<ul>
-<li>Follow <a href="03-git.html#install-git">these steps</a> to install Git. (Requires administrator/root privellege)</li>
-</ul>
-<div id="for-windows" class="section level3">
-<h3>For Windows</h3>
+<p>Directions are a courtesy of Software Carpentry.</p>
+<div id="windows" class="section level3">
+<h3>Windows</h3>
+<p>This will provide you with Git and Git Bash.</p>
+<p><a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a></p>
 <ol style="list-style-type: decimal">
-<li>Download the Git for Windows installer from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>.</li>
+<li>Download the Git for Windows <a href="https://gitforwindows.org/">installer</a>.</li>
 <li>Run the installer and follow the steps bellow:
 <ol style="list-style-type: decimal">
+<li>Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the Information, location, components, and start menu screens.</li>
+<li><em>Select “Use the nano editor by default” and click on “Next”.</em></li>
+<li>Keep “Use Git from the Windows Command Prompt” selected and click on “Next”. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.</li>
 <li>Click on “Next”.</li>
-<li>Click on “Next”.</li>
-<li>Keep “<strong>Use Git from the Windows Command Prompt</strong>” selected and click on “Next”. If you forgot to do this, rerun the installer and select the appropriate option.</li>
-<li>Click on “Next”.</li>
-<li>Keep “<strong>Checkout Windows-style, commit Unix-style line endings</strong>” selected and click on “Next”.</li>
-<li>Keep “<strong>Use Windows’ default console window</strong>” selected and click on “Next”.</li>
+<li>Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.</li>
+<li><em>Select “Use Windows’ default console window” and click on “Next”.</em></li>
 <li>Click on “Install”.</li>
 <li>Click on “Finish”.</li>
 </ol></li>
@@ -510,31 +519,29 @@ div.tocify {
 <li>Open command prompt (Open Start Menu then type ‘cmd’ (without quotes) and press [Enter])</li>
 <li>Type the following line into the command prompt window exactly as shown: <code>setx HOME &quot;%USERPROFILE%&quot;</code></li>
 <li>Press [Enter], you should see <code>SUCCESS: Specified value was saved</code>.</li>
-<li>Quit command prompt by typing exit then pressing [Enter]</li>
+<li>Quit command prompt by typing <code>exit</code> then pressing [Enter]</li>
 </ol></li>
 </ol>
 </div>
-<div id="for-mac" class="section level3">
-<h3>For Mac</h3>
-<p>Install <a href="https://sourceforge.net/projects/git-osx-installer/files/">git-osx-installer</a>.</p>
+<div id="mac" class="section level3">
+<h3>Mac</h3>
+<p><a href="https://www.youtube.com/watch?v=9LQhwETCdwY">Video Tutorial</a></p>
+<ol style="list-style-type: decimal">
+<li><em>For OS X 10.9 and higher</em>, install Git for Mac by downloading and running the most recent “mavericks” installer from <a href="https://sourceforge.net/projects/git-osx-installer/files/">this list</a>. Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your <code>/Applications</code> folder, as Git is a command line program.</li>
+<li><em>For older versions of OS X (10.5-10.8)</em> use the most recent available installer labelled “snow-leopard” available <a href="https://sourceforge.net/projects/git-osx-installer/files/">here</a>.</li>
+</ol>
 </div>
 <div id="for-linux" class="section level3">
 <h3>For Linux</h3>
-<p>Install `git’ from your distro’s package manager. Additional directions found <a href="https://git-scm.com/download/linux">here</a>.</p>
+<p>If Git is not already available on your machine you can try to install it via your distro’s package manager. For Debian/Ubuntu run <code>sudo apt-get install git</code> and for Fedora run <code>sudo dnf install git</code>.</p>
 </div>
-</div>
-<div id="installation-verification" class="section level2">
-<h2>Installation Verification</h2>
-<ol style="list-style-type: decimal">
-<li>Launch RStudio and you should see a program window like this:
+<div id="installation-verification" class="section level3">
+<h3>Installation Verification</h3>
+Launch RStudio and you should see a program window like this:
 <center>
 <img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png">
-</center></li>
-<li>Click the <strong>File</strong> menu, select <strong>New Project…</strong>, then <strong>Version Control</strong> and <strong>Git</strong>;</li>
-<li>Copy &amp; paste this URL: <a href="https://github.com/cities/datascience2018.git" class="uri">https://github.com/cities/datascience2018.git</a> into the the Repository URL textbox;</li>
-<li>Click <strong>Create Project</strong>.</li>
-</ol>
-<p>If you see a popup box that says “Clone Repsitory” with a progress bar and then RStudio refreshes, then your installation is working.</p>
+</center>
+</div>
 </div>
 </div>
 <div id="what-is-data-science" class="section level1">
@@ -565,36 +572,6 @@ div.tocify {
 <li><a href="http://www.r-graph-gallery.com/">Graphics Gallery</a></li>
 <li><a href="https://shiny.rstudio.com/gallery/">Interactive Web Apps: Interactive Plots, Dashboard, Widget …</a></li>
 <li>Packages for doing statistics &amp; machine learning, creating documents, grabbing/processing data …</li>
-</ul>
-</div>
-<div id="class-project" class="section level1">
-<h1>Class project</h1>
-<p>For the class project, you are expected to create a re-usable R script with the following requirements and commit it to GitHub:</p>
-<ol style="list-style-type: decimal">
-<li><p>Part I</p>
-<ol style="list-style-type: decimal">
-<li>Contains at least one self-contained function;</li>
-<li>Follows a consistent style guide;</li>
-<li>Completed with necessary documentation;</li>
-<li>Has at least one test that passes;</li>
-<li>[Advanced] Organizes the function(s) into a package that passes the checks</li>
-</ol></li>
-<li>Part II
-<ol style="list-style-type: decimal">
-<li>Utilzes tidyverse functions as much as possible</li>
-<li>[Advanced] Includes a vignette that demonstrates the usage of the package</li>
-</ol></li>
-</ol>
-<p>You can take and/or re-organize code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting project ideas.</p>
-<p>If you don’t have a feasible project idea at the moment, consider writing a R package that reads and visualizes the bike counts on Steel Bridge, Hawthorne Bridge, and Tilikum Crossing. Daily traffic counts data for these bridges can be found <a href="https://github.com/cities/datascience2018/tree/master/data">here</a>. At the minimum, your package should be able to:</p>
-<ul>
-<li>Read the data in the excel file;</li>
-<li>Process (tidy) the data as necessary;</li>
-<li>Visualize bike counts crossing a bridge based on a data frame passed in;</li>
-<li>Plot daily bike counts for any specified period;</li>
-<li>[Advanced] Plot daily, weekly, or monthly bike counts based on a frequency argument;</li>
-<li>[Advanced] Overlay weather data for Portland and study (visualize and/or model) the effect of weather on bike traffic;</li>
-<li>[Advanced] Study (visualize and/or model) the effect of Tilikum Crossing (opened in September 2015) on bike counts crossing other bridges.</li>
 </ul>
 </div>
 

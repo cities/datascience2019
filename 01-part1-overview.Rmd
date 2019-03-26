@@ -13,23 +13,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Installing R and R Studio
 R and R Studio are two different software packages. You must install R first.
-- Download and install R 3.5.2 from https://ftp.osuosl.org/pub/cran/ . Or, go to www.r-project.org and and click on the _download R_ link and choose your preferred CRAN mirror. You will have the option to download and install R for Linux, Mac, or Windows. (*NOTE: Requires administrator/root privellege.*)
+- Download and install the latest version of F from https://ftp.osuosl.org/pub/cran/ . Or, go to www.r-project.org and and click on the _download R_ link and choose your preferred CRAN mirror. You will have the option to download and install R for Linux, Mac, or Windows. (*NOTE: Requires administrator/root privellege.*)
 - Install the latest RStudio Desktop free version from https://www.rstudio.com/products/rstudio/download/ .
 
 If you already have R and RStudio installed on your laptop, it'd be a good idea to check their version and upgrade them to the latest (if they are not).
 
 ## Installing Git
-- Follow [these steps](03-git.html#install-git) to install Git. (Requires administrator/root privellege)
 
-### For Windows
-1. Download the Git for Windows installer from https://git-scm.com/download/win.
+Directions are a courtesy of Software Carpentry.
+
+### Windows
+This will provide you with Git and Git Bash.
+
+[Video Tutorial](https://www.youtube.com/watch?v=339AEqk9c-8)
+
+1. Download the Git for Windows [installer](https://gitforwindows.org/).
 1. Run the installer and follow the steps bellow:
+    1. Click on "Next" four times (two times if you've previously installed Git). You don't need to change anything in the Information, location, components, and start menu screens.
+    1. *Select "Use the nano editor by default" and click on "Next".*
+    1. Keep "Use Git from the Windows Command Prompt" selected and click on "Next". If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
     1. Click on "Next".
-    1. Click on "Next".
-    1. Keep "**Use Git from the Windows Command Prompt**" selected and click on "Next". If you forgot to do this, rerun the installer and select the appropriate option.
-    1. Click on "Next".
-    1. Keep "**Checkout Windows-style, commit Unix-style line endings**" selected and click on "Next".
-    1. Keep "**Use Windows' default console window**" selected and click on "Next".
+    1. Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next". 
+    1. *Select "Use Windows' default console window" and click on "Next".*
     1. Click on "Install".
     1. Click on "Finish".
 1. If your "HOME" environment variable is not set (or you don't know what this is):
@@ -37,21 +42,22 @@ If you already have R and RStudio installed on your laptop, it'd be a good idea 
     1. Type the following line into the command prompt window exactly as shown:
          `setx HOME "%USERPROFILE%"`
     1. Press [Enter], you should see `SUCCESS: Specified value was saved`.
-    1. Quit command prompt by typing exit then pressing [Enter]
+    1. Quit command prompt by typing `exit` then pressing [Enter]
 
-### For Mac 
-Install [git-osx-installer](https://sourceforge.net/projects/git-osx-installer/files/).
+### Mac
+
+[Video Tutorial](https://www.youtube.com/watch?v=9LQhwETCdwY)
+
+1. *For OS X 10.9 and higher*, install Git for Mac by downloading and running the most recent "mavericks" installer from [this list](https://sourceforge.net/projects/git-osx-installer/files/). Because this installer is not signed by the developer, you may have to right click (control click) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your `/Applications` folder, as Git is a command line program.
+1. *For older versions of OS X (10.5-10.8)* use the most recent available installer labelled "snow-leopard" available [here](https://sourceforge.net/projects/git-osx-installer/files/).
 
 ### For Linux 
-Install `git' from your distro's package manager. Additional directions found [here](https://git-scm.com/download/linux).
 
-## Installation Verification
-1. Launch RStudio and you should see a program window like this: <center><img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png"></center>
-1. Click the **File** menu, select **New Project...**, then **Version Control** and **Git**;
-1. Copy & paste this URL: https://github.com/cities/datascience2018.git into the the Repository URL textbox; 
-1. Click **Create Project**.
+If Git is not already available on your machine you can try to install it via your distro's package manager. For Debian/Ubuntu run `sudo apt-get install git` and for Fedora run `sudo dnf install git`.
 
-If you see a popup box that says "Clone Repsitory" with a progress bar and then RStudio refreshes, then your installation is working.
+### Installation Verification
+Launch RStudio and you should see a program window like this: <center><img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png"></center>
+
 
 # What is Data Science?
 
@@ -79,31 +85,3 @@ Data Science Venn Diagram by Drew Conway
   - [Graphics Gallery](http://www.r-graph-gallery.com/)
   - [Interactive Web Apps: Interactive Plots, Dashboard, Widget ...](https://shiny.rstudio.com/gallery/)
   - Packages for doing statistics & machine learning, creating documents, grabbing/processing data ...
-
-# Class project
-
-For the class project, you are expected to create a re-usable R script with the following requirements and commit it to GitHub:
-
-1. Part I
-
-    1. Contains at least one self-contained function;
-    1. Follows a consistent style guide;
-    1. Completed with necessary documentation;
-    1. Has at least one test that passes;
-    1. [Advanced] Organizes the function(s) into a package that passes the checks
-
-2. Part II
-    1. Utilzes tidyverse functions as much as possible
-    1. [Advanced] Includes a vignette that demonstrates the usage of the package
-
-You can take and/or re-organize code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting project ideas.
-
-If you don't have a feasible project idea at the moment, consider writing a R package that reads and visualizes the bike counts on Steel Bridge, Hawthorne Bridge, and Tilikum Crossing. Daily traffic counts data for these bridges can be found [here](https://github.com/cities/datascience2018/tree/master/data). At the minimum, your package should be able to:
-
-- Read the data in the excel file;
-- Process (tidy) the data as necessary;
-- Visualize bike counts crossing a bridge based on a data frame passed in;
-- Plot daily bike counts for any specified period;
-- [Advanced] Plot daily, weekly, or monthly bike counts based on a frequency argument;
-- [Advanced] Overlay weather data for Portland and study (visualize and/or model) the effect of weather on bike traffic;
-- [Advanced] Study (visualize and/or model) the effect of Tilikum Crossing (opened in September 2015) on bike counts crossing other bridges.
