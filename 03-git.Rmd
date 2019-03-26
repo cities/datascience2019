@@ -38,7 +38,7 @@ git config --global color.ui "auto"
 - [Review of common git commands](http://happygitwithr.com/usage-git-cmds.html)
 - [Hosting](http://swcarpentry.github.io/git-novice/13-hosting/index.html)
 
-## Optional lessons and additional resources
+## Optional lessons
 - [Open Science](http://swcarpentry.github.io/git-novice/10-open/index.html)
 - [Licensing](http://swcarpentry.github.io/git-novice/11-licensing/index.html)
 - [Citation](http://swcarpentry.github.io/git-novice/12-citation/index.html)
