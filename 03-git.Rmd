@@ -35,7 +35,6 @@ git config --global color.ui "auto"
 - [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/index.html)
 - [Collaborating](http://swcarpentry.github.io/git-novice/08-collab/)
 - [Conflicts](http://swcarpentry.github.io/git-novice/09-conflict/)
-- [Review of common git commands](http://happygitwithr.com/usage-git-cmds.html)
 - [Hosting](http://swcarpentry.github.io/git-novice/13-hosting/index.html)
 
 ## Optional lessons
