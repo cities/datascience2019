@@ -15,7 +15,7 @@ The benefits of learning the shell outweighs the seemingly steep learning curve.
 In this section we will cover a few basic commands and a brief introduction to the Unix shell.
 
 ## Setup
-1. Download [data-shell.zip](https://raw.githubusercontent.com/cities/datascience2019/index-lee/data/data-shell.zip) (Right click & select Save link as...) and move the file to your Desktop.
+1. Download [data-shell.zip](https://raw.githubusercontent.com/cities/datascience2019/master/data/data-shell.zip) (Right click & select Save link as...) and move the file to your Desktop.
 2. Unzip/extract the file.
 3. Open a terminal and type `cd` then press the Enter key.
 
