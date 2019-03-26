@@ -11,7 +11,7 @@
 
 
 
-<title>R Coding Basics</title>
+<title>R coding and scripting basics</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -406,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -473,133 +482,31 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">R Coding Basics</h1>
+<h1 class="title toc-ignore">R coding and scripting basics</h1>
 
 </div>
 
 
-<div id="the-tidyverse-packages" class="section level1">
-<h1>The tidyverse packages</h1>
-<ul>
-<li>Website: <a href="http://www.tidyverse.org/packages/" class="uri">http://www.tidyverse.org/packages/</a></li>
-<li>Install with <code>install.packages(&quot;tidyverse&quot;)</code></li>
-</ul>
-</div>
-<div id="r-coding-basics" class="section level1">
-<h1>R Coding Basics</h1>
-<p>This section assumes students know little about R and gets them up to speed with the basics. I am now convinced that it might be easier to teach beginners <code>tidyverse</code> than the base R, as argued by <a href="http://varianceexplained.org/r/teach-tidyverse/">David Robinson</a>. We will dive right into tidyverse, which will be covered in more depth in Part II.</p>
+<p>This section will cover a brief introduction to R and RStudio, some base R topics, and recommendations for adopting a style guide for R.</p>
+<div id="lessons" class="section level2">
+<h2>Lessons</h2>
 <ol style="list-style-type: decimal">
-<li><a href="http://r4ds.had.co.nz/explore-intro.html">Introduction</a></li>
-<li><a href="http://r4ds.had.co.nz/workflow-basics.html">Coding Basic</a></li>
-<li><a href="http://r4ds.had.co.nz/data-import.html">Import Data into R</a></li>
-<li><a href="http://r4ds.had.co.nz/transform.html">Data Transformation</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/">Visualization with ggplot2</a>
-<ul>
-<li>How can I create publication-quality graphics in R?</li>
-</ul></li>
-<li><em><a href="http://r4ds.had.co.nz/exploratory-data-analysis.html">Exploratory Data Analysis</a></em></li>
-<li><a href="http://r4ds.had.co.nz/functions.html">Functions</a></li>
-<li><a href="http://r4ds.had.co.nz/vectors.html">Vector</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/">Writing Good Software</a>
-<ul>
-<li>How can I write software that other people can use?</li>
-</ul></li>
-</ol>
-<p>However, if you prefer or are more comfortable with base R, these lessons by Software Carpentry covers more or less similar contents with mostly base R functions:</p>
-<ol style="list-style-type: decimal">
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/">Data Structures</a>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/">Introduction to R and RStudio</a></li>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/index.html">Data Structures</a>
 <ul>
 <li>How can I read data in R?</li>
 <li>What are the basic data types in R?</li>
 <li>How do I represent categorical information in R?</li>
 </ul></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/">Exploring Data Frames</a>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/index.html">Exploring Data Frames</a>
 <ul>
 <li>How can I manipulate a data frame?</li>
 </ul></li>
-<li><em><a href="http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/">Subsetting Data</a></em>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html">Subsetting Data</a>
 <ul>
 <li>How can I work with subsets of data in R?</li>
 </ul></li>
-<li><em><a href="http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/">Control Flow</a></em>
-<ul>
-<li>How can I make data-dependent choices in R?</li>
-<li>How can I repeat operations in R?</li>
-</ul></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/">Visualization with ggplot2</a>
-<ul>
-<li>How can I create publication-quality graphics in R?</li>
-</ul></li>
-<li><em><a href="http://swcarpentry.github.io/r-novice-gapminder/09-vectorization/">Vectorization</a></em>
-<ul>
-<li>How can I operate on all the elements of a vector at once?</li>
-</ul></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/10-functions/">Functions Explained</a>
-<ul>
-<li>How can I write a new function in R?</li>
-</ul></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/">Writing Good Software</a>
-<ul>
-<li>How can I write software that other people can use?</li>
-</ul></li>
 </ol>
-<div id="pipe-operator" class="section level2">
-<h2>Pipe operator</h2>
-<p><code>%&gt;%</code> pipes an object forward into a function or call expression</p>
-<ul>
-<li>Basic piping
-<ul>
-<li>x %&gt;% f is equivalent to f(x)</li>
-<li>x %&gt;% f(y) is equivalent to f(x, y)</li>
-<li>x %&gt;% f %&gt;% g %&gt;% h is equivalent to h(g(f(x)))</li>
-</ul></li>
-<li>Using <code>%&gt;%</code> with unary function calls</li>
-</ul>
-<pre class="r"><code>require(tidyverse)</code></pre>
-<pre><code>## Loading required package: tidyverse</code></pre>
-<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v ggplot2 3.1.0       v purrr   0.3.2  
-## v tibble  2.1.1       v dplyr   0.8.0.1
-## v tidyr   0.8.3       v stringr 1.4.0  
-## v readr   1.3.1       v forcats 0.4.0</code></pre>
-<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>iris %&gt;% head</code></pre>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<pre class="r"><code>iris %&gt;% tail</code></pre>
-<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
-## 145          6.7         3.3          5.7         2.5 virginica
-## 146          6.7         3.0          5.2         2.3 virginica
-## 147          6.3         2.5          5.0         1.9 virginica
-## 148          6.5         3.0          5.2         2.0 virginica
-## 149          6.2         3.4          5.4         2.3 virginica
-## 150          5.9         3.0          5.1         1.8 virginica</code></pre>
-<ul>
-<li>Placing lhs as the first argument in rhs call</li>
-</ul>
-<pre class="r"><code>## What are the outputs for these lines?
-3 %&gt;% `-`(4)
-iris %&gt;% head(5)
-iris %&gt;% tail(5)</code></pre>
-<ul>
-<li>Placing lhs elsewhere in rhs call</li>
-</ul>
-<pre class="r"><code>## What are the outputs for these
-3 %&gt;% `-`(4, .)
-4 %&gt;% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;)[.]</code></pre>
-<p>More information available at: <a href="http://magrittr.tidyverse.org/" class="uri">http://magrittr.tidyverse.org/</a></p>
-<p>RStudio keyboard shortcut for <code>%&gt;%</code>:</p>
-<ul>
-<li>Ctrl-Shift-M (Windows)</li>
-<li>Command-Shift-M (Mac)</li>
-</ul>
 </div>
 <div id="code-style-guide" class="section level2">
 <h2>Code Style Guide</h2>
@@ -608,144 +515,15 @@ iris %&gt;% tail(5)</code></pre>
 <li><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R style guide</a></li>
 <li><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s code style guide</a></li>
 </ul>
-<div id="r-command-line-program" class="section level3">
-<h3>R Command-Line Program</h3>
-<p>RStudio is good for writing and testing your R code, but for work that needs repetitions or takes a long time to finish, it may be easier to run your program/script in command line instead.</p>
-<p>Before we start, open the RStudio project you created following <a href="#rstudio-project">the RStudio project organization recomendations</a> in the Overview section (assuming you downloaded and saved the bike counts data to the <code>data</code> directory of the project).</p>
-<p>We can create an R script (from the <strong>File/New File/R Script</strong> menu of RStudio) that load the bike counts for Hawthorne Bridge:</p>
-<pre class="r"><code>library(tidyverse)
-
-input_file &lt;- &quot;data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx&quot;
-bridge_name &lt;- &quot;Hawthorne&quot;
-bikecounts &lt;- read_excel(input_file,        #path - the path to the input excel file
-                         sheet=bridge_name, #name/number of the sheet, it uses name of the bridge
-                         skip=1)            #since each worksheet has a two-row header, skip the first row
-#names(bikecounts) &lt;- c(&quot;date&quot;, &quot;westbound&quot;, &quot;eastbound&quot;, &quot;total&quot;)
-bikecounts$bridge &lt;- bridge_name
-
-head(bikecounts)</code></pre>
-<p>Choose a file name, for example, <code>load_data.R</code>, and save the script in the code directory of your RStudio project (created a <code>code</code> directory first if you haven’t yet).</p>
-<p>Now we can run the script in a command line shell (you can open one in <strong>RStudio’s Tools/Shell…</strong> menu):</p>
-<pre class="r"><code>Rscript code/load_data.R</code></pre>
-<p>Notice that the script may not print out outputs on the screen when called in the command line unless you explicitly call the <code>print</code> function.</p>
-<p>But what if we have many files for which we would like to repeatedly show the basic information (rows, data types etc)? We can refactor our script to accept the file name and bridge name from command line arguments, so that the script can work with any acceptable files.</p>
-<p>In an R script, you can use <code>commandArgs</code> function to get the command line arguments:</p>
-<pre class="r"><code>args &lt;- commandArgs()
-print(args)</code></pre>
-<p>So in our case, our script should take input_file and bridge_name from the command line arguments, we can get the value of the arguments with:</p>
-<pre class="r"><code>args &lt;- commandArgs()
-input_file &lt;- args[1]
-bridge_name &lt;- args[2]</code></pre>
-<p>Replace the two lines in <code>load_data.R</code> starting with <code>input_file</code> and <code>bridge_name</code> with these three lines.</p>
-<p>Now our script can be invoked in the command line with:</p>
-<pre class="r"><code>Rscript code/load_data.R &quot;data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx&quot; \
-Hawthorne</code></pre>
-<p>(The quotation marks are needed for the file name when there are spaces in the name and “&quot; breaks a command into two lines.)</p>
 </div>
-<div id="optional-debugging-with-rstudio" class="section level3">
-<h3>(Optional) Debugging with RStudio</h3>
-<p>This section is adapted from <a href="http://www.milanor.net/blog/visual-debugging-with-rstudio/">Visual Debugging with RStudio</a>.</p>
-<ol style="list-style-type: decimal">
-<li><p>Download <code>foo.R</code> from <a href="https://raw.githubusercontent.com/cities/datascience2017/master/code/foo.R" class="uri">https://raw.githubusercontent.com/cities/datascience2017/master/code/foo.R</a> and save it to the <code>code</code> dirctory of your project folder;</p></li>
-<li>Open <code>foo.R</code> and <code>source</code> it;</li>
-<li><p>In the RStudio Console pane of type <code>foo(&quot;-1&quot;)</code> and then enter.</p></li>
-</ol>
-<p>Why does the <code>foo</code> function claim “-1 is larger than 0”? Let’s debug the <code>foo</code> function and find out.</p>
-</div>
-</div>
-<div id="exercise" class="section level2">
-<h2>Exercise</h2>
-<ol style="list-style-type: decimal">
-<li>Write a function that takes a spreadsheet number and name of a bridge as inputs and return a data frame from the bike counts spreadsheet;
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<p>Additional base R lessons can be found <a href="http://swcarpentry.github.io/r-novice-gapminder/">here</a>, courtesy of Software Carpentry, and cover the following additional topics that will not be covered in Part I of this workshop:</p>
 <ul>
-<li>use the <code>read_excel</code> function in the <code>readxl</code> package to read data in excel files</li>
-</ul></li>
-<li>Create an R script that utilizes your function to read in bike counts data for all three bridges;</li>
-<li>Do quick summaries of the data for each brigde:
-<ul>
-<li>How many days of data are there for each bridge?</li>
-<li>What are the average daily bike counts for each bridge? Minimum? Maximum?</li>
-<li>What are the average monthly and annual bike counts for each bridge?</li>
-</ul></li>
-<li>[Advanced] Write a function that calculates average daily, weekly, or monthly bike counts for each bridge based on a frequency argument.</li>
-</ol>
-<div id="my-code-example" class="section level3">
-<h3>My code example</h3>
-<p><a href="code/load_data.R">Download the file</a></p>
-<pre class="r"><code>library(readxl)
-library(lubridate)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;lubridate&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:base&#39;:
-## 
-##     date</code></pre>
-<pre class="r"><code>input_file &lt;- &quot;data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx&quot;
-bridge_name &lt;- &quot;Hawthorne&quot;
-
-# define a funtion that load bike counts data
-load_data &lt;- function(input_file, bridge_name) {
-  bikecounts &lt;- read_excel(input_file,
-                           sheet = bridge_name,
-                           skip = 1)
-  bikecounts$name &lt;- bridge_name
-  bikecounts
-}
-
-Tilikum &lt;- load_data(input_file, &quot;Tilikum&quot;)
-Hawthorne &lt;- load_data(input_file, &quot;Hawthorne&quot;)
-
-# use the column names of Tilikum for Hawthorne
-names(Hawthorne) &lt;- names(Tilikum)
-
-Steel &lt;- load_data(input_file, &quot;Steel&quot;)
-names(Steel) &lt;- c(&quot;date&quot;, &quot;lower&quot;, &quot;westbound&quot;, &quot;eastbound&quot;, &quot;total&quot;, &quot;name&quot;)
-
-# combine all three data frame for all three bridges
-bikecounts &lt;- bind_rows(Hawthorne, 
-                        Tilikum, 
-                        Steel %&gt;% select(-lower)) # exclude the `lower` col in Steel data frame
-
-# average daily bike counts by bridge
-bikecounts %&gt;% 
-  group_by(name) %&gt;% 
-  summarize(avg_daily_counts=mean(total, na.rm=TRUE))</code></pre>
-<pre><code>## # A tibble: 3 x 2
-##   name      avg_daily_counts
-##   &lt;chr&gt;                &lt;dbl&gt;
-## 1 Hawthorne            3904.
-## 2 Steel                2240.
-## 3 Tilikum              1725.</code></pre>
-<pre class="r"><code># average monthly bike counts by bridge
-bikecounts %&gt;% 
-  # first create ym column as a unique month identifier
-  group_by(name, ym=floor_date(date, &quot;month&quot;)) %&gt;%
-  summarize(total_monthly_counts=sum(total), counts=n()) %&gt;% 
-  # then average by month over years for each bridge
-  group_by(name, month(ym)) %&gt;% 
-  summarize(avg_monthly_counts=mean(total_monthly_counts))</code></pre>
-<pre><code>## # A tibble: 36 x 3
-## # Groups:   name [3]
-##    name      `month(ym)` avg_monthly_counts
-##    &lt;chr&gt;           &lt;dbl&gt;              &lt;dbl&gt;
-##  1 Hawthorne           1             79782.
-##  2 Hawthorne           2             81534.
-##  3 Hawthorne           3            100500.
-##  4 Hawthorne           4            130006.
-##  5 Hawthorne           5            155227.
-##  6 Hawthorne           6            151171.
-##  7 Hawthorne           7            138820.
-##  8 Hawthorne           8            164198.
-##  9 Hawthorne           9            142954.
-## 10 Hawthorne          10            126626 
-## # ... with 26 more rows</code></pre>
-</div>
-</div>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources:</h1>
-<ul>
-<li><a href="https://campus.datacamp.com/courses/free-introduction-to-r/chapter-1-intro-to-basics-1?ex=1">Introduction to R on Data Camp</a>: A self-instruction course covering R basics.</li>
-<li><a href="http://varianceexplained.org/r/teach-tidyverse/">Teach the tidyverse to beginners</a></li>
+<li>Control flow</li>
+<li>Vectorization</li>
+<li>Functions</li>
+<li>Writing good software</li>
 </ul>
 </div>
 
