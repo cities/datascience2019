@@ -1,6 +1,14 @@
 ---
-title: "Class Project"
-output: 
+title: "Class project"
+output:
   html_document:
     toc: TRUE
 ---
+## Class project
+
+## Project management with RStudio
+
+## Using Git with RStudio
+
+## Intro to RMarkdown
+
