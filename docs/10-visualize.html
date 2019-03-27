@@ -406,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -478,18 +487,13 @@ div.tocify {
 </div>
 
 
-<div id="overview" class="section level1">
-<h1>Overview</h1>
-<p>ggplot2 is a grammar of graphics, a coherent system for describing and building graphs.</p>
-<ul>
-<li>data (data frame): <code>ggplot(dataset)</code></li>
-<li>aesthetic mapping (coordination system, color, size, line type, position etc): <code>aes()</code></li>
-<li>geometries: <code>geom_point</code>, <code>geom_line</code>, <code>geom_bar</code>, …</li>
-<li>stat (summarization/transformation of data): <code>stat_smooth</code>,</li>
-<li>scale (map data values into computer values): <code>scale_y_continuous()</code>, <code>scale_x_log10</code>, …</li>
-<li>facet: <code>facet_wrap</code>, <code>facet_grid</code></li>
-<li>fine tuning coordinatae, theme, labels: <code>coordinate_*</code>, <code>theme_bw</code>, <code>labs(x=..., y=...)</code></li>
-</ul>
+<p>There are many plotting packages for R, as well as the base plotting system; however, ggplot2 is one of the most efficient plotting packages to produce high quality figures in a relatively short amount of time.</p>
+<div id="lesson" class="section level2">
+<h2>Lesson</h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/index.html">Creating publication-quality graphics with ggplot2</a></li>
+</ol>
+</div>
 <div id="tips" class="section level2">
 <h2>Tips</h2>
 <ul>
@@ -498,35 +502,14 @@ div.tocify {
 <li><a href="https://blog.rstudio.com/2016/08/31/forcats-0-1-0/">Use factors (for reorder &amp; better labeling)</a></li>
 </ul>
 </div>
-</div>
-<div id="lesson" class="section level1">
-<h1>Lesson</h1>
-<ol style="list-style-type: decimal">
-<li><a href="http://cities.github.io/datascience/data-visulization-with-ggplot2.html">Data visulization with ggplot2</a></li>
-<li><a href="https://github.com/sinhrks/ggfortify">ggfortify - plot some popular R packages with ggplot2</a></li>
-<li><a href="http://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></li>
-<li><a href="http://ggplot2.tidyverse.org/reference/geom_map.html">geom_sf - ggplot2 working with simple feature</a> and the <a href="https://github.com/r-spatial/sf">simple feature package</a> for geo-spatial analysis</li>
-<li><a href="https://github.com/dkahle/ggmap">ggmap - raster map tiles from popular online mapping services</a></li>
-<li><a href="http://www.htmlwidgets.org/showcase_leaflet.html">interactive maps and charts with R</a></li>
-</ol>
-</div>
-<div id="exercise" class="section level1">
-<h1>Exercise</h1>
-<ol style="list-style-type: decimal">
-<li>Plot the daily bike counts with ggplot2; Experiement with different options (bar, line, etc) and select the one works best for you;</li>
-<li>Plot weekly, monthly, and annual bike counts for the three bridges;</li>
-<li>Now think about and try out different ways to plot weather information along with your daily bike counts (separately or together);</li>
-<li>You can combine time series stats and ggplot2/ggfortify to plot seasonal variation, trend and noise separately. See <a href="http://rpubs.com/sinhrks/plot_tsstats">here</a> for an example of how to do this.</li>
-</ol>
-<p><a href="code/visualize_bikecounts.R">Sample code</a></p>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources:</h1>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
 <ol style="list-style-type: decimal">
 <li><a href="https://github.com/jennybc/ggplot2-tutorial/blob/master/ggplot2-tutorial-slides/ggplot2-tutorial-slides.pdf">ggplot2 tutorial by Dr. Jenny Bryan</a></li>
 <li><a href="http://r4ds.had.co.nz/graphics-for-communication.html">R4DS Graphics for communication</a></li>
 <li><a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf">The ggplot2 Cheat Sheet - RStudio</a></li>
 <li><a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook</a></li>
+<li><a href="https://www.amazon.com/dp/0387981403/ref=cm_sw_su_dp?tag=ggplot2-20">ggplot2</a> book</li>
 </ol>
 </div>
 
