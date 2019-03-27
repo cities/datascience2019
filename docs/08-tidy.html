@@ -406,28 +406,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="01-rstudio.html">Workflow and RStudio</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +454,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -478,8 +487,6 @@ div.tocify {
 </div>
 
 
-<div id="tidy-data" class="section level1">
-<h1>Tidy Data</h1>
 <p>There are three interrelated rules which make a dataset tidy:</p>
 <ul>
 <li>Each variable must have its own column.</li>
@@ -494,128 +501,15 @@ div.tocify {
 <li>Put each dataset in a tibble.</li>
 <li>Put each variable in a column.</li>
 </ul>
-</div>
-<div id="lesson" class="section level1">
-<h1>Lesson</h1>
-<p>Download the script that generates the tables for the lesson <a href="https://raw.githubusercontent.com/cities/datascience2018/master/code/tidy_data.R">here</a></p>
-<ol style="list-style-type: decimal">
-<li><a href="http://cities.github.io/datascience/tidy-data.html">Tidy Data</a></li>
-</ol>
-</div>
-<div id="exercise" class="section level1">
-<h1>Exercise</h1>
-<ol style="list-style-type: decimal">
-<li>Are the bike counts data tidy data?</li>
-<li>If not, why not? And how can we tidy it?</li>
-<li>Convert the total bike counts data to a wide format, with each row representing a day, and a column representing the total bike counts for each of the three bridges;</li>
-<li>Convert the above data frame in wide format back to long format.</li>
-<li>[Challenge] After tidying the bike counts, using functions in the <code>tidyr</code> package, create tables summarizing the average bike counts by bridge and day of week in two different formats:</li>
-</ol>
-<table style="width:76%;">
-<caption>Bike Counts by Day of Week and Bridge (1st Format)</caption>
-<colgroup>
-<col width="16%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="9%" />
-<col width="8%" />
-<col width="8%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Bridge</th>
-<th align="center">Sun</th>
-<th align="center">Mon</th>
-<th align="center">Tue</th>
-<th align="center">Wed</th>
-<th align="center">Thur</th>
-<th align="center">Fri</th>
-<th align="center">Sat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Hawthorne</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">Tilikum</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<table style="width:49%;">
-<caption>Bike Counts by Day of Week and Bridge (2nd Format)</caption>
-<colgroup>
-<col width="19%" />
-<col width="16%" />
-<col width="12%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Day of Week</th>
-<th align="center">Hawthorne</th>
-<th align="center">Tilikum</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Fri</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">Mon</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">Sat</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">Sun</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">Thur</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">Tue</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">Wed</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<p>Sample code: <a href="code/tidy_counts.R">tidy_counts.R</a></p>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources</h1>
+<div id="lesson" class="section level2">
+<h2>Lesson</h2>
 <ol style="list-style-type: decimal">
 <li><a href="http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/">Dataframe Manipulation with tidyr</a></li>
+</ol>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<ol style="list-style-type: decimal">
 <li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data Wrangling Cheat sheet</a></li>
 <li><a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Introduction to tidyr</a></li>
 </ol>
