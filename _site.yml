@@ -24,8 +24,8 @@ navbar:
           href: 09-dplyr.html
         - text: "Data manipulation with tidyr"
           href: 09-tidyr.html
-        - text: "Workflow and RStudio"
-          href: 01-rstudio.html
+        - text: "Formatting dates"
+          href: 13-formatdates.html
         - text: "Class project"
           href: 10-classproject.html
     - text: Part II
