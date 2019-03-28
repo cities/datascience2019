@@ -40,7 +40,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Data visulization with ggplot2](10-visualize.html)
 1. [Data manipulation with dplyr](09-dplyr.html)
 1. [Data manipulation with tidyr](09-tidyr.html)
-1. [Workflow and RStudio](01-rstudio.html)
+1. [Formatting dates](13-formatdates.html)
 1. [Class project](10-classproject.html)
 1. Part I Wrap Up
 

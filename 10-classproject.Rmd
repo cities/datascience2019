@@ -1,6 +1,28 @@
 ---
-title: "Class Project"
-output: 
+title: "Class project"
+output:
   html_document:
-    toc: TRUE
+    toc: FALSE
 ---
+The purpose of the class project is create a shareable, reproduciable work product that utilizes what you've learned during Part I of the workshop. You will work in groups of two or three and are required to provide the following outcomes:
+
+1. A repository in GitHub
+2. An html document that contains the following:
+    + Purpose or research question
+    + Code used to manipulate and explore data with enough documentation for someone else to reproduce and understand your method.
+    + Results of your work with a minimum of two figures (preferably using ggplot2).
+    + Brief summary or conclusion of the outcome of your purpose or research question.
+
+Below is a list of clean datasets for you to use. You may also use your own dataset.
+
+Datasets:
+
+- [Lake Powell, 1925-2017](https://raw.githubusercontent.com/cities/datascience2019/master/data/colorado.zip)
+- Install the `fivethirtyeight` package and use one of the many available datasets listed [here](https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html).
+
+Before you get started on the class project we will briefly introduce some project managment tools that should help you with the collaborative process:
+
+1. [Project management with RStudio](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+1. [Using Git with RStudio](https://swcarpentry.github.io/git-novice/14-supplemental-rstudio/)
+1. [Intro to RMarkdown](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/index.html)
+

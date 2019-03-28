@@ -1,0 +1,55 @@
+---
+title: "Formatting dates"
+output: 
+  html_document:
+    toc: TRUE
+---
+
+Working with time-series data can be a challenge for new and experienced R users. You will often have to format the date, time, and timezone when working with raw data. R does not automatically recognize date-time formats and there are many formats for representing date-time (e.g. yyyy-mm-dd, mm-dd-yy, mm/dd/yyyy hh:mm:ss).
+
+`lubridate` is a handy package that is installed as part of the `tidyverse` installation but does not automatically load when you call for the `tidyverse` package (`library(tidyverse)`). You have to explicitly call the package when you need it with `library(tidyverse)`.
+
+## Lesson
+Download the sample data set from [here](https://raw.githubusercontent.com/cities/datascience2019/master/data/leesferry.csv) (left-click & Save link as...), and move it to the data folder of your working drive.
+
+Load the library and sample dataset.
+```{r setup, results="hide", message=FALSE}
+library(lubridate)
+library(dplyr)
+
+leesferry <- read.csv("data/leesferry.csv", stringsAsFactors = F)
+```
+
+Check the structure of your dataframe and you'll notice the `date.time` attribute is a character string. You'll also notice that the timezone is MST.
+```{r, echo = TRUE}
+str(leesferry)
+```
+
+When assigning timezones to your date-time attribute use the Olson name which can be called by `OlsonNames()` of which there are over 600. You can also look at a list [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+
+To format the `date.time` attribute with the appropriate timezone use the following `lubridate` function:
+```{r ymd_hms_tz, results = "hide"}
+leesferry$date.time <- ymd_hms(leesferry$date.time, tz = "US/Mountain")
+```
+
+To extract the year, month, or day of a date:
+```{r extract from date, results = "hide"}
+# Extract and create new column for year
+leesferry$year <- year(leesferry$date.time)
+
+# Extract and create new columns for month and day of week
+leesferry_dow <- leesferry %>%
+  mutate(month = month(date.time)) %>%
+  mutate(dow = wday(date.time, label = T, abbr = T))
+```
+
+There are a number of functions with lubridate that can make working with time-series data including but not limited to:
+
+- rounding date-times (helpful with aggregations)
+- calculating intervals, periods, and durations
+
+Check out the [vignette](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf) for these additional functions.
+
+## Resources
+1. [Dates and times](https://r4ds.had.co.nz/dates-and-times.html)
+1. [Lubridate cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf)
