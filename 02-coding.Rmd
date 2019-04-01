@@ -27,6 +27,7 @@ This section will cover a brief introduction to R and RStudio, some base R topic
 
 In programming as in writing, it is generally a good idea to stick to a consitent coding style. There are two style guides that you can adopt or customize to create your own:
 
+- [Tidyverse style guide](https://style.tidyverse.org/)
 - [Google's R style guide](https://google.github.io/styleguide/Rguide.xml)
 - [Hadley Wickham's code style guide](http://adv-r.had.co.nz/Style.html)
 
