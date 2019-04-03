@@ -76,9 +76,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -196,8 +194,6 @@ $(document).ready(function () {
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -362,6 +358,16 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -441,27 +447,13 @@ div.tocify {
     <li>
       <a href="06-part2-overview.html">Overview</a>
     </li>
-    <li>
-      <a href="07-import.html">Data importing</a>
-    </li>
-    <li>
-      <a href="08-tidy.html">Tidy Data</a>
-    </li>
-    <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
-    </li>
-    <li>
-      <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
-    </li>
-    <li>
-      <a href="12-where.html">Where to go from here</a>
-    </li>
-    <li>
-      <a href="04-package.html">Creating R Packages</a>
-    </li>
-    <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
-    </li>
+    <li class="dropdown-header">Writing functions</li>
+    <li class="dropdown-header">API's</li>
+    <li class="dropdown-header">More data wrangling</li>
+    <li class="dropdown-header">Spatial analysis and visualizations</li>
+    <li class="dropdown-header">Intro to statistical analysis</li>
+    <li class="dropdown-header">Sharing reproducible work products</li>
+    <li class="dropdown-header">Class project</li>
   </ul>
 </li>
       </ul>
@@ -482,6 +474,10 @@ div.tocify {
 
 
 <p>This section will cover a brief introduction to R and RStudio, some base R topics, and recommendations for adopting a style guide for R.</p>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>Download the gapminder data used for the lessons <a href="https://raw.githubusercontent.com/cities/datascience2019/master/data/gapminder_data.csv">here</a> (right-click &amp; save link as…)</p>
+</div>
 <div id="lessons" class="section level2">
 <h2>Lessons</h2>
 <ol style="list-style-type: decimal">

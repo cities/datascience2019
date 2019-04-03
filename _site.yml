@@ -32,20 +32,20 @@ navbar:
       menu:
         - text: "Overview"
           href: 06-part2-overview.html
-        - text: "Data importing"
-          href: 07-import.html
-        - text: "Tidy Data"
-          href: 08-tidy.html
-        - text: "Working with Maps and GIS data"
-          href: 02-gis.html
-        - text: "Split-Apply-Combine Pattern"
-          href: 11-split-apply-combine.html
-        - text: "Where to go from here"
-          href: 12-where.html
-        - text: "Creating R Packages"
-          href: 04-package.html
-        - text: "R Markdown"
-          href: 05-rmarkdown.html
+        - text: "Writing functions"
+          href: 
+        - text: "API's"
+          href: 
+        - text: "More data wrangling"
+          href: 
+        - text: "Spatial analysis and visualizations"
+          href: 
+        - text: "Intro to statistical analysis"
+          href: 
+        - text: "Sharing reproducible work products"
+          href: 
+        - text: "Class project"
+          href: 
 
         
         
