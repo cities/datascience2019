@@ -76,7 +76,9 @@ h6 {
 </style>
 
 
+</head>
 
+<body>
 
 <style type = "text/css">
 .main-container {
@@ -194,6 +196,8 @@ $(document).ready(function () {
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
+
+<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -358,16 +362,6 @@ div.tocify {
 
 </style>
 
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -406,28 +400,34 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="01-part1-overview.html">Overview</a>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
     </li>
     <li>
-      <a href="01-rstudio.html">Introduction to R and RStudio</a>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
     </li>
     <li>
-      <a href="02-coding.html">R Coding Basics</a>
+      <a href="03-unix-shell.html">The Unix shell</a>
     </li>
     <li>
-      <a href="02-ds-best-practices.html">Data Science Best Practices</a>
+      <a href="03-git.html">Version control with Git</a>
     </li>
     <li>
-      <a href="02-gis.html">Working with Maps and GIS data</a>
+      <a href="02-coding.html">R coding and scripting basics</a>
     </li>
     <li>
-      <a href="03-git.html">Version Control with Git</a>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
     </li>
     <li>
-      <a href="04-package.html">Creating R Packages</a>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
     </li>
     <li>
-      <a href="05-rmarkdown.html">R Markdown</a>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="13-formatdates.html">Formatting dates</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
     </li>
   </ul>
 </li>
@@ -448,16 +448,19 @@ div.tocify {
       <a href="08-tidy.html">Tidy Data</a>
     </li>
     <li>
-      <a href="09-dplyr.html">Data manipulation with dplyr</a>
-    </li>
-    <li>
-      <a href="10-visualize.html">Data visualization with ggplot2</a>
+      <a href="02-gis.html">Working with Maps and GIS data</a>
     </li>
     <li>
       <a href="11-split-apply-combine.html">Split-Apply-Combine Pattern</a>
     </li>
     <li>
       <a href="12-where.html">Where to go from here</a>
+    </li>
+    <li>
+      <a href="04-package.html">Creating R Packages</a>
+    </li>
+    <li>
+      <a href="05-rmarkdown.html">R Markdown</a>
     </li>
   </ul>
 </li>
@@ -478,35 +481,16 @@ div.tocify {
 </div>
 
 
-<div id="overview" class="section level1">
-<h1>Overview</h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
 <p>From a tidyverse perspective, a data analysis problem is solved in a series of data-centric steps: data acquisition and representation (Import), data cleaning (Tidy), and an iterative sequence of data transformation (Transform), data modelling (Model) and data visualization (Visualize). The end result of the process is to communicate insights obtained from the data (Communicate). This class will take you through all the steps in the process and will teach you how to approach such problems in a systematic manner. You will learn how to design data analysis pipelines as well as how to implement data analysis pipelines in R. The class will also emphasize how elegant code leads to reproducible science.</p>
 <center>
 <img src="http://r4ds.had.co.nz/diagrams/data-science.png">
 </center>
 </div>
-<div id="the-tidyverse-workflow" class="section level1">
-<h1>The tidyverse workflow</h1>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
 <p><a href="http://r4ds.had.co.nz/introduction.html">import-tidy-transform-visualize-model-communicate workflow</a></p>
-</div>
-<div id="class-project" class="section level1">
-<h1>Class project</h1>
-<p>For the class project for Part II, you are expected to continue what your start in Part I, but closely follow the tidyverse work flow and use the <code>tidyverse</code> suite of packages to conduct an analytic project using data of your choice. Your project should involve these steps:</p>
-<ol style="list-style-type: decimal">
-<li>Data importing and tidying;</li>
-<li>Data transformation;</li>
-<li>Data Visualization;</li>
-<li>[Optional] Data modeling;</li>
-<li>[Optional] Reproducible reporting.</li>
-</ol>
-<p>You can use data from your current work or continue a project you have been working on. If you don’t have a feasible project idea at the moment, consider continuing to analyze the bike counts data on Hawthorne Bridge and Tilikum Crossing from Part I. Daily traffic counts data for these two bridges can be found <a href="https://github.com/cities/datascience2018/tree/master/data">here</a>.</p>
-<p>Sample analytic questions are:</p>
-<ul>
-<li>After accounting for seasonal variation, is there a trend in bike traffic across these two bridges?</li>
-<li>How was the bike traffic affected by weather (temperature, precipitation, etc)?</li>
-<li>Was the bike traffic on the Hawthorne Bridge affected by the opening of Tilikum Crossing?</li>
-</ul>
-<p>You can work on any one or all of these questions with visualization and/or modeling after you import, tidy and transform the data when necessary.</p>
 </div>
 
 
