@@ -21,6 +21,9 @@ That interrelationship leads to an even simpler set of practical instructions:
 - Put each dataset in a tibble.
 - Put each variable in a column.
 
+## Setup
+1. Download some "messy" data ([bikenet-change](https://raw.githubusercontent.com/cities/datascience2019/master/data/bikenet-change.csv))
+
 ## Lesson
 1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)
 
