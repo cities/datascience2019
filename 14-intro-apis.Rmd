@@ -1,0 +1,108 @@
+---
+title: "Intro to APIs"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is an API?
+
+Briefly, an application programming interface (API) is an intermediary that sends and recieves requests. Many web APIs conform with REST principals which is a type of architectural information style that allows for consistent communication formats between the client and host. APIs can be a convinient and efficient way to retreive and send large amounts of data. Often, services that provide an API will also provide documentation on how to access and use their API.
+
+For a better and more thorough explanation about API's please check out Zapier's ["An introduction to APIs"](https://zapier.com/learn/apis/), written by Brian Cooksey.
+
+## Lesson: TriMet example
+
+Information on using TriMet's API can be found [here](https://developer.trimet.org/).
+
+In this lesson example we will be using TriMet's RESTful API to get data. 
+
+1. Register for access to their API by clicking on the option to register for an AppID on their developer page, or click [here](https://developer.trimet.org/appid/registration/). Most services require registering for access to their API even if data are being provided for free. This is often done to limit the number of calls and amount of data requested on a daily basis. Too many calls or requests of extremely large amounts of data can slow a server and make it difficult for others to use the API. Don't be a bad apple by ruining it for everyone else accessing the API.
+
+1. Verify your AppID by checking your email completing the verification process.
+
+1. From the main TriMet developer webpage, navigate to the documentation page of where they provide a list of currently available web services, or click [here](https://developer.trimet.org/ws_docs/).
+
+1. There are a variety of packages to choose from when fetching API data using R. Here we use `httr` and `jsonlite`. If data are not available in json format but available as XML check out `XML` or `xml2`.
+
+```{r libraries, warning = F, results = "hide"}
+library(httr)
+library(jsonlite)
+```
+
+Let's say we're interested in arrival times for a subset of locations. A list of location IDs can be found from their schedule data in GTFS format [here](https://developer.trimet.org/GTFS.shtml); download the zip file and extract the `stops.txt` file to get a list of stop IDs which is equivalent to location IDs. To make a call to `GET` data we need to follow TriMet's [request parameters for arrivals](https://developer.trimet.org/ws_docs/arrivals2_ws.shtml). (Note that we are using version 2.)
+
+```{r call-string}
+# Components we'll use to make a call:
+appid <- "appID=A136748821E06E7AD9650462B"
+baseurl <- "https://developer.trimet.org/ws/v2/arrivals"
+locIDs <- "locIDs=5887,5889,5890,5892"
+
+# Paste the components for the call
+call1 <- paste(baseurl, "?",
+               locIDs, "&",
+               appid, sep = "")
+
+call1
+```
+
+Make a GET request:
+```{r make-call}
+get_arrivals <- GET(call1)
+```
+
+Check the status of your request:
+```{r call-status}
+http_status(get_arrivals)
+```
+
+There are several ways to explore your GET request. You'll notice that the data is read in as a list.
+
+```{r explore-request}
+names(get_arrivals)
+headers(get_arrivals)
+```
+
+You'll also notice that working with JSON in R (and XML) can be frustrating the format comprises of lists of lists within lists. Sometimes it's easy to understand and parse, most of the time it's a lot of exploring. To get the content of your request into something more useable we can use the following steps:
+
+```{r json-to-R, warning = F, message = F, error = F}
+# Get the content of your request
+parse_arrivals <- fromJSON(content(get_arrivals, "text"))
+```
+
+To extract a list within a list use double brackets. The `arrival` data we want is nested within the `resultSet` list from `parse_arrivals`.
+
+```{r results}
+results <- parse_arrivals[['resultSet']]
+arrival <- results[['arrival']]
+```
+
+You're almost there in having a nice data frame to work with... 
+
+```{r arrival-str}
+str(arrival)
+```
+
+You'll notice that `arrival$scheduled` and `arrival$estimated` should be a date-time, but instead you're given a UNIX time code and want to fix it to a readable and useable format.
+
+```{r date-time}
+# Converting to readable date time
+arrival$scheduled <- as.POSIXct(arrival$scheduled/1000, origin = "1970-01-01", tz = "America/Los_Angeles")
+arrival$estimated <- as.POSIXct(arrival$estimated/1000, origin = "1970-01-01", tz = "America/Los_Angeles")
+```
+
+## Exercise
+1. You being to notice that some of the scheduled and estimated arrival times are off. Create a new column calculating the difference between the scheduled and estimated arrival time.
+
+1. You also notice that several codes might exist, as a list, under `arrival$detour`. How would you go about getting information on the detour code? What would be your approach of wrangling the `detour` data?
+
+## Checking for existing packages
+The first thing you should really do before embarking on this effort to obtain data from APIs, check to see if there isn't already a package written as a wrapper for the API of interest. For example, if you're interested in using GTFS data from TriMet, or some other major transit authority, you can easily search for "GTFS, R package" and you'll see that there are a couple available: `tidytransit` and `gtfsr`. Read the vignettes or README files for the packages to determine if the package fits your needs, if so then you're in luck and most of the tedious work is done for you.
+
+## Resources
+
+1. [Wikipedia page on APIs](https://en.wikipedia.org/wiki/Application_programming_interface)
+1. Zev Ross's [Using R to download and parse JSON: an example using data from an open data portal](http://zevross.com/blog/2015/02/12/using-r-to-download-and-parse-json-an-example-using-data-from-an-open-data-portal/)
+1. [Fetching JSON data from REST APIs](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-apis.html)
