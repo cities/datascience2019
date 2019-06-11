@@ -1,0 +1,23 @@
+---
+title: "Writing Functions"
+output: 
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is a function?
+A function is a sequence of specific operations combined into a single repeatable action with specific inputs and outputs.
+
+## When to create your own function?
+- When you find yourself running a specific sequence of operations over and over again.
+- When you're collaborating on a project where a specific calculation must be consistent and used by multiple people (and reduce the chances of making mistakes).
+
+## Lesson
+1. [Functions Explained](https://swcarpentry.github.io/r-novice-gapminder/10-functions/index.html)
+
+## Additional resources
+1. [Functions](https://r4ds.had.co.nz/functions.html)
