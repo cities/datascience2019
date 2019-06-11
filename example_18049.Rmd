@@ -1,0 +1,122 @@
+---
+title: "Working with dates and regex"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+```
+
+## Purpose
+Explore BikeTown data looking at the mean miles traveled per week during the summer of 2018 (06/2018 through 09/2018.
+
+```{r pull_data}
+source("/home/tammy/Documents/ds19-class/code/biketown-example.R")
+get_data(start = "06/2018", end = "09/2018")
+
+setwd("/home/tammy/Documents/ds19-class/data/biketown/")
+
+folder <- "/home/tammy/Documents/ds19-class/data/biketown/"
+
+filenames <- list.files(path = folder, pattern = "*.csv", all.files = FALSE,
+                        full.names = FALSE,
+                        recursive = FALSE, ignore.case = FALSE)
+
+read_csv_filename <- function(filenames){
+  ret <- read.csv(filenames, stringsAsFactors = F, 
+                  strip.white = T, na.strings = "")
+  ret$Source <- filenames
+  ret
+}
+
+bike_raw <- plyr::ldply(filenames, read_csv_filename)
+
+setwd("/home/tammy/TREC/datascience2019/")
+
+#### Just call in data one file at a time
+file1 <- read.csv("/home/tammy/Documents/ds19-class/data/biketown/2018_06.csv", stringsAsFactors = F)
+file2 <- read.csv("/home/tammy/Documents/ds19-class/data/biketown/2018_07.csv", stringsAsFactors = F)
+
+## After calling in all your files use bind_rows()
+bike_raw <- bind_rows(file1, file2, ...)
+```
+
+```{r data_wrangling}
+str(bike_raw)
+
+bike_df1 <- bike_raw %>%
+  mutate(start.datetime = paste(StartDate, StartTime, sep = " "),
+         end.datetime = paste(EndDate, EndTime, sep = " "))
+str(bike_df1)
+
+# covert start.datetime and end.datetime into date-time format,
+# make sure to include your timezone
+
+# check acceptable timezone values
+OlsonNames()
+head(bike_df1$start.datetime)
+
+bike_df1$start.datetime <- mdy_hm(bike_df1$start.datetime, tz = "America/Los_Angeles")
+bike_df1$end.datetime <- mdy_hm(bike_df1$end.datetime, tz = "America/Los_Angeles")
+str(bike_df1)
+
+# convert duration into a useable format
+bike_df1$Duration <- hms(bike_df1$Duration)
+
+# Error thrown after converting to duration indicating NAs,
+# Check raw dataframe for NAs in Duration column
+sum(is.na(bike_raw$Duration))
+
+
+```
+
+`lubridate` has three synonomous functions but they define very different actions:
+
+1. duration(): time spans are in units of seconds, and there is no start date invovled.
+2. interval(): also measured in units of seconds, and provides the difference between start and end.
+3. period(): measures time span in units larger than seconds, this is handy when accounting for daylight saving times, and leap years.
+
+```{r duration_calc}
+# Calculate interval
+bike_df1$interval <- interval(bike_df1$start.datetime, bike_df1$end.datetime)
+head(bike_df1$interval)
+
+# Calculate duration
+bike_df1$duration.all <- as.duration(bike_df1$interval)
+head(bike_df1$duration.all)
+
+# Calculate period
+bike_df1$period <- as.period(bike_df1$duration.all)
+head(bike_df1$period)
+
+# floor_date() is helpful for aggregating
+bike_wkagg <- bike_df1 %>%
+  mutate(week.datetime = floor_date(start.datetime, unit = "week"))
+head(bike_wkagg$week.datetime)
+
+# Calculate weekly mean distance traveled
+wkmean_dt <- bike_wkagg %>%
+  group_by(week.datetime) %>%
+  summarise(weekly.meandist = mean(Distance_Miles))
+View(wkmean_dt)
+
+# Plot your results
+
+wkmean_dt_fig <- wkmean_dt %>%
+  ggplot(aes(x = as.Date(week.datetime), y = weekly.meandist)) +
+  geom_bar(stat = "identity", fill = "orange") +
+  scale_x_date(date_breaks = "1 week") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+wkmean_dt_fig
+
+
+```
+
+
+
+
+

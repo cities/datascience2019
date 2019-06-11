@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Formatting dates</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Spring 2019</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Part I
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="02-ds-best-practices.html">Data science best practices</a>
+    </li>
+    <li>
+      <a href="01-part1-overview.html">Setup, overview, and introduction</a>
+    </li>
+    <li>
+      <a href="03-unix-shell.html">The Unix shell</a>
+    </li>
+    <li>
+      <a href="03-git.html">Version control with Git</a>
+    </li>
+    <li>
+      <a href="02-coding.html">R coding and scripting basics</a>
+    </li>
+    <li>
+      <a href="10-visualize.html">Data visualization with ggplot2</a>
+    </li>
+    <li>
+      <a href="09-dplyr.html">Data manipulation with dplyr</a>
+    </li>
+    <li>
+      <a href="09-tidyr.html">Data manipulation with tidyr</a>
+    </li>
+    <li>
+      <a href="13-formatdates.html">Formatting dates</a>
+    </li>
+    <li>
+      <a href="10-classproject.html">Class project</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Part II
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="06-part2-overview.html">Overview</a>
+    </li>
+    <li class="dropdown-header">Writing functions</li>
+    <li class="dropdown-header">API's</li>
+    <li class="dropdown-header">More data wrangling</li>
+    <li class="dropdown-header">Spatial analysis and visualizations</li>
+    <li class="dropdown-header">Intro to statistical analysis</li>
+    <li class="dropdown-header">Sharing reproducible work products</li>
+    <li class="dropdown-header">Class project</li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Formatting dates</h1>
+
+</div>
+
+
+<p>Working with time-series data can be a challenge for new and experienced R users. You will often have to format the date, time, and timezone when working with raw data. R does not automatically recognize date-time formats and there are many formats for representing date-time (e.g. yyyy-mm-dd, mm-dd-yy, mm/dd/yyyy hh:mm:ss).</p>
+<p><code>lubridate</code> is a handy package that is installed as part of the <code>tidyverse</code> installation but does not automatically load when you call for the <code>tidyverse</code> package (<code>library(tidyverse)</code>). You have to explicitly call the package when you need it.</p>
+<div id="lesson" class="section level2">
+<h2>Lesson</h2>
+<p>Use one of the Biketown data files you downloaded the other day in the writing functions exercise. Or use <code>source</code> to use the function to get Biketown data for 06/2018 through 08/2018.</p>
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:lubridate&#39;:
+## 
+##     intersect, setdiff, union</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre><code>## Registered S3 methods overwritten by &#39;ggplot2&#39;:
+##   method         from 
+##   [.quosures     rlang
+##   c.quosures     rlang
+##   print.quosures rlang</code></pre>
+<pre class="r"><code>source(&quot;/home/tammy/Documents/ds19-class/code/biketown-example.R&quot;)</code></pre>
+<pre><code>## Loading required package: pacman</code></pre>
+<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called &#39;pacman&#39;</code></pre>
+<pre><code>## Installing package into &#39;/home/tammy/R/x86_64-pc-linux-gnu-library/3.6&#39;
+## (as &#39;lib&#39; is unspecified)</code></pre>
+<pre><code>## also installing the dependency &#39;remotes&#39;</code></pre>
+<pre><code>## Warning in dir.create(&quot;data/biketown&quot;): &#39;data/biketown&#39; already exists</code></pre>
+<pre class="r"><code>get_data(start = &quot;06/2018&quot;, end = &quot;08/2018&quot;)
+
+# Function to read in all files and combine into one dataframe
+# This function only works if you explicitly set the working drive to
+# where the data is being stored
+
+# Aftering running the function, make sure to set the working drive
+# back to the folder where your .Rproj file is stored.
+
+setwd(&quot;/home/tammy/Documents/ds19-class/data/biketown&quot;)
+folder &lt;- &quot;/home/tammy/Documents/ds19-class/data/biketown&quot;
+filenames &lt;- list.files(path = folder, pattern = &quot;*.csv&quot;, all.files = FALSE, full.names = FALSE,
+                        recursive = FALSE, ignore.case = FALSE)
+read_csv_filename &lt;- function(filenames){
+  ret &lt;- read.csv(filenames, stringsAsFactors = F, 
+                  strip.white = T, na.strings = &quot;&quot;)
+  ret$Source &lt;- filenames
+  ret
+}
+bike_raw &lt;- plyr::ldply(filenames, read_csv_filename)
+
+setwd(&quot;/home/tammy/TREC/datascience2019/&quot;)</code></pre>
+<pre class="r"><code># check data structure
+str(bike_raw)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    399955 obs. of  20 variables:
+##  $ RouteID         : int  5444350 5444358 5444362 5444364 5444365 5444386 5444391 5444393 5444394 5444398 ...
+##  $ PaymentPlan     : chr  &quot;Subscriber&quot; &quot;Subscriber&quot; &quot;Subscriber&quot; &quot;Subscriber&quot; ...
+##  $ StartHub        : chr  &quot;NE 11th at Holladay Park&quot; &quot;SW Park at Portland Art Museum&quot; NA &quot;NE Holladay at MLK&quot; ...
+##  $ StartLatitude   : num  45.5 45.5 45.5 45.5 45.5 ...
+##  $ StartLongitude  : num  -123 -123 -123 -123 -123 ...
+##  $ StartDate       : chr  &quot;1/1/2018&quot; &quot;1/1/2018&quot; &quot;1/1/2018&quot; &quot;1/1/2018&quot; ...
+##  $ StartTime       : chr  &quot;0:00&quot; &quot;0:06&quot; &quot;0:10&quot; &quot;0:12&quot; ...
+##  $ EndHub          : chr  NA &quot;NW Glisan at 21st&quot; &quot;NW 2nd at Everett&quot; NA ...
+##  $ EndLatitude     : num  45.5 45.5 45.5 45.5 45.5 ...
+##  $ EndLongitude    : num  -123 -123 -123 -123 -123 ...
+##  $ EndDate         : chr  &quot;1/1/2018&quot; &quot;1/1/2018&quot; &quot;1/1/2018&quot; &quot;1/1/2018&quot; ...
+##  $ EndTime         : chr  &quot;0:11&quot; &quot;0:16&quot; &quot;0:14&quot; &quot;0:24&quot; ...
+##  $ TripType        : chr  NA NA NA NA ...
+##  $ BikeID          : int  7135 6185 6403 6182 6622 6199 7333 6593 7327 6159 ...
+##  $ BikeName        : chr  &quot;0303 BIKETOWN&quot; &quot;0537 BIKETOWN&quot; &quot;0830 BIKETOWN&quot; &quot;0317 BIKETOWN&quot; ...
+##  $ Distance_Miles  : num  0.85 1.26 0.5 1.77 1.15 1.08 0.78 0.77 0.91 0.99 ...
+##  $ Duration        : chr  &quot;0:11:18&quot; &quot;0:09:33&quot; &quot;0:03:40&quot; &quot;0:12:13&quot; ...
+##  $ RentalAccessPath: chr  &quot;keypad&quot; &quot;keypad&quot; &quot;keypad&quot; &quot;keypad&quot; ...
+##  $ MultipleRental  : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+##  $ Source          : chr  &quot;2018_01.csv&quot; &quot;2018_01.csv&quot; &quot;2018_01.csv&quot; &quot;2018_01.csv&quot; ...</code></pre>
+<pre class="r"><code># create new columns `start.datetime` and `end.datetime`
+bike_df1 &lt;- bike_raw %&gt;%
+  mutate(start.datetime = paste(StartDate, StartTime, sep = &quot; &quot;),
+         end.datetime = paste(EndDate, EndTime, sep = &quot; &quot;))
+
+# convert `start.datetime` and `end.datetime` into date time format with appropriate timezone
+bike_df1$start.datetime &lt;- mdy_hm(bike_df1$start.datetime, tz = &quot;America/Los_Angeles&quot;)
+bike_df1$end.datetime &lt;- mdy_hm(bike_df1$end.datetime, tz = &quot;America/Los_Angeles&quot;)
+
+# convert `Duration` into a useable format
+bike_df1$Duration &lt;- hms(bike_df1$Duration)</code></pre>
+<pre><code>## Warning in .parse_hms(..., order = &quot;HMS&quot;, quiet = quiet): Some strings
+## failed to parse, or all strings are NAs</code></pre>
+<pre class="r"><code># this throws a warning about NA&#39;s
+
+# checking for NAs in `bike_raw$Duration`
+sum(is.na(bike_raw$Duration))</code></pre>
+<pre><code>## [1] 3946</code></pre>
+<p>There are three functions in <code>lubridate</code> that seem synonomous but define very different actions:</p>
+<ol style="list-style-type: decimal">
+<li>duration: span of time measured in seconds, and there is no start date involved (see above example useage)</li>
+<li>interval: measures between two specific time points (in seconds)</li>
+<li>period: measures time span in units larger than seconds, handy for when accounting for daylight saving times, leap years</li>
+</ol>
+<pre class="r"><code># calculate interval
+bike_df1$interval &lt;- interval(bike_df1$start.datetime, bike_df1$end.datetime)
+head(bike_df1$interval)</code></pre>
+<pre><code>## [1] 2018-01-01 00:00:00 PST--2018-01-01 00:11:00 PST
+## [2] 2018-01-01 00:06:00 PST--2018-01-01 00:16:00 PST
+## [3] 2018-01-01 00:10:00 PST--2018-01-01 00:14:00 PST
+## [4] 2018-01-01 00:12:00 PST--2018-01-01 00:24:00 PST
+## [5] 2018-01-01 00:12:00 PST--2018-01-01 00:19:00 PST
+## [6] 2018-01-01 00:22:00 PST--2018-01-01 00:44:00 PST</code></pre>
+<pre class="r"><code># calculate duration
+bike_df1$duration.all &lt;- as.duration(bike_df1$interval)
+head(bike_df1$duration.all)</code></pre>
+<pre><code>## [1] &quot;660s (~11 minutes)&quot;  &quot;600s (~10 minutes)&quot;  &quot;240s (~4 minutes)&quot;  
+## [4] &quot;720s (~12 minutes)&quot;  &quot;420s (~7 minutes)&quot;   &quot;1320s (~22 minutes)&quot;</code></pre>
+<pre class="r"><code># calculate period
+bike_df1$period &lt;- as.period(bike_df1$duration.all)
+head(bike_df1$period)</code></pre>
+<pre><code>## [1] &quot;11M 0S&quot; &quot;10M 0S&quot; &quot;4M 0S&quot;  &quot;12M 0S&quot; &quot;7M 0S&quot;  &quot;22M 0S&quot;</code></pre>
+<pre class="r"><code># using floor_date to help aggregate data
+# want weekly mean distance traveled
+
+bike_wkagg &lt;- bike_df1 %&gt;%
+  mutate(week.datetime = floor_date(start.datetime, unit = &quot;week&quot;)) %&gt;%
+  group_by(week.datetime) %&gt;%
+  summarise(weekly.meandist = mean(Distance_Miles))
+str(bike_wkagg)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    53 obs. of  2 variables:
+##  $ week.datetime  : POSIXct, format: &quot;2017-12-31&quot; &quot;2018-01-07&quot; ...
+##  $ weekly.meandist: num  1.6 1.67 1.69 1.45 1.63 ...</code></pre>
+<pre class="r"><code>bike_wkagg$week.datetime &lt;- as.Date(bike_wkagg$week.datetime)
+
+weekly_meandist_fig &lt;- bike_wkagg %&gt;%
+  ggplot(aes(x = week.datetime, y = weekly.meandist)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;orange&quot;) +
+  scale_x_date(date_breaks = &quot;1 week&quot;) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+weekly_meandist_fig</code></pre>
+<p><img src="15-dates-regex_files/figure-html/aggregate_datetime-1.png" width="672" /></p>
+<p>There are a few important regular expression (Regex) base R functions that are handy to know when working with strings:</p>
+<ol style="list-style-type: decimal">
+<li><code>grep</code> and <code>grepl</code>: <code>grep</code> looks for a match within a string vector and returns an indice of matches. <code>grepl</code> looks for a match within a string and returns a logical vector.</li>
+<li><code>sub</code> and <code>gsub</code>: replaces the <em>first</em> exact matching chunk of text within a string vector with a specified replacement. <code>gsub</code> replaces <em>all</em> exact matching chunks of text with a specified replacement.</li>
+</ol>
+<pre class="r"><code># Create three different station categories for the start and end stations
+bike_df2 &lt;- bike_df1 %&gt;%
+  mutate(start.station.category = if_else(grepl(&quot;Community&quot;, StartHub), &quot;Community Station&quot;,
+                                    if_else(grepl(&quot;&quot;, StartHub), &quot;Outside Station&quot;,
+                                      &quot;BIKETOWN Station&quot;))) %&gt;%
+  mutate(end.station.category = if_else(grepl(&quot;Community&quot;, EndHub), &quot;Community Station&quot;,
+                                    if_else(grepl(&quot;&quot;, EndHub), &quot;Outside Station&quot;,
+                                      &quot;BIKETOWN Station&quot;)))
+table(bike_df2$start.station.category)</code></pre>
+<pre><code>## 
+##  BIKETOWN Station Community Station   Outside Station 
+##            138316             10957            250682</code></pre>
+<pre class="r"><code>table(bike_df2$end.station.category)</code></pre>
+<pre><code>## 
+##  BIKETOWN Station Community Station   Outside Station 
+##            109237             12427            278291</code></pre>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<p>Steve Fick’s <a href="https://d-rug.github.io/blog/2015/regex.fick">Regular Expressions</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

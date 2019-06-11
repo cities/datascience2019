@@ -1,0 +1,21 @@
+---
+title: "Sharing reproducible work products"
+output:
+  html_document:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Creating reproducible work products
+One of the many advantages of working in R and R Studio is the ability to create shareable and reproducible work products (e.g. interactive dashboards, static or interactive reports, interactive webpages, and websites such as this).
+
+Throughout this course we've been using R Markdown, however there are many other options to create a work product depending on your specific needs. Below is a list of few resources that will point you to other commonly used packages to create a variety of work products based on your needs.
+
+## Resources
+1. [R Markdown](05-rmarkdown.html)
+1. [Flex dashboard](https://rmarkdown.rstudio.com/flexdashboard/)
+1. [Shiny](http://shiny.rstudio.com/)
+1. [blogdown](https://bookdown.org/yihui/blogdown/)

@@ -1,0 +1,126 @@
+---
+title: "Formatting dates"
+output: 
+  html_document:
+    toc: TRUE
+---
+
+Working with time-series data can be a challenge for new and experienced R users. You will often have to format the date, time, and timezone when working with raw data. R does not automatically recognize date-time formats and there are many formats for representing date-time (e.g. yyyy-mm-dd, mm-dd-yy, mm/dd/yyyy hh:mm:ss).
+
+`lubridate` is a handy package that is installed as part of the `tidyverse` installation but does not automatically load when you call for the `tidyverse` package (`library(tidyverse)`). You have to explicitly call the package when you need it.
+
+## Lesson
+
+Use one of the Biketown data files you downloaded the other day in the writing functions exercise. Or use `source` to use the function to get Biketown data for 06/2018 through 08/2018.
+```{r setup}
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+
+source("/home/tammy/Documents/ds19-class/code/biketown-example.R")
+get_data(start = "06/2018", end = "08/2018")
+
+# Function to read in all files and combine into one dataframe
+# This function only works if you explicitly set the working drive to
+# where the data is being stored
+
+# Aftering running the function, make sure to set the working drive
+# back to the folder where your .Rproj file is stored.
+
+setwd("/home/tammy/Documents/ds19-class/data/biketown")
+folder <- "/home/tammy/Documents/ds19-class/data/biketown"
+filenames <- list.files(path = folder, pattern = "*.csv", all.files = FALSE, full.names = FALSE,
+                        recursive = FALSE, ignore.case = FALSE)
+read_csv_filename <- function(filenames){
+  ret <- read.csv(filenames, stringsAsFactors = F, 
+                  strip.white = T, na.strings = "")
+  ret$Source <- filenames
+  ret
+}
+bike_raw <- plyr::ldply(filenames, read_csv_filename)
+
+setwd("/home/tammy/TREC/datascience2019/")
+```
+
+```{r data_wrangling}
+# check data structure
+str(bike_raw)
+
+# create new columns `start.datetime` and `end.datetime`
+bike_df1 <- bike_raw %>%
+  mutate(start.datetime = paste(StartDate, StartTime, sep = " "),
+         end.datetime = paste(EndDate, EndTime, sep = " "))
+
+# convert `start.datetime` and `end.datetime` into date time format with appropriate timezone
+bike_df1$start.datetime <- mdy_hm(bike_df1$start.datetime, tz = "America/Los_Angeles")
+bike_df1$end.datetime <- mdy_hm(bike_df1$end.datetime, tz = "America/Los_Angeles")
+
+# convert `Duration` into a useable format
+bike_df1$Duration <- hms(bike_df1$Duration)
+# this throws a warning about NA's
+
+# checking for NAs in `bike_raw$Duration`
+sum(is.na(bike_raw$Duration))
+```
+
+There are three functions in `lubridate` that seem synonomous but define very different actions:
+
+1. duration: span of time measured in seconds, and there is no start date involved (see above example useage)
+1. interval: measures between two specific time points (in seconds)
+1. period: measures time span in units larger than seconds, handy for when accounting for daylight saving times, leap years
+
+```{r datetime}
+# calculate interval
+bike_df1$interval <- interval(bike_df1$start.datetime, bike_df1$end.datetime)
+head(bike_df1$interval)
+
+# calculate duration
+bike_df1$duration.all <- as.duration(bike_df1$interval)
+head(bike_df1$duration.all)
+
+# calculate period
+bike_df1$period <- as.period(bike_df1$duration.all)
+head(bike_df1$period)
+```
+
+```{r aggregate_datetime}
+# using floor_date to help aggregate data
+# want weekly mean distance traveled
+
+bike_wkagg <- bike_df1 %>%
+  mutate(week.datetime = floor_date(start.datetime, unit = "week")) %>%
+  group_by(week.datetime) %>%
+  summarise(weekly.meandist = mean(Distance_Miles))
+str(bike_wkagg)
+bike_wkagg$week.datetime <- as.Date(bike_wkagg$week.datetime)
+
+weekly_meandist_fig <- bike_wkagg %>%
+  ggplot(aes(x = week.datetime, y = weekly.meandist)) +
+  geom_bar(stat = "identity", fill = "orange") +
+  scale_x_date(date_breaks = "1 week") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+weekly_meandist_fig
+```
+
+There are a few important regular expression (Regex) base R functions that are handy to know when working with strings:
+
+1. `grep` and `grepl`: `grep` looks for a match within a string vector and returns an indice of matches. `grepl` looks for a match within a string and returns a logical vector.
+1. `sub` and `gsub`: replaces the *first* exact matching chunk of text within a string vector with a specified replacement. `gsub` replaces *all* exact matching chunks of text with a specified replacement.
+
+```{r regular expressions}
+# Create three different station categories for the start and end stations
+bike_df2 <- bike_df1 %>%
+  mutate(start.station.category = if_else(grepl("Community", StartHub), "Community Station",
+                                    if_else(grepl("", StartHub), "Outside Station",
+                                      "BIKETOWN Station"))) %>%
+  mutate(end.station.category = if_else(grepl("Community", EndHub), "Community Station",
+                                    if_else(grepl("", EndHub), "Outside Station",
+                                      "BIKETOWN Station")))
+table(bike_df2$start.station.category)
+table(bike_df2$end.station.category)
+
+
+```
+
+## Resources
+Steve Fick's [Regular Expressions](https://d-rug.github.io/blog/2015/regex.fick)
